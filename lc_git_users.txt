@@ -1,0 +1,2 @@
+firstname,lastname,email,git_username,repository_name
+Marcelo,Li_Gonzales,marcelo.ligonzales@ucalgary.ca,MarceloLiGonzales,ENCM369
