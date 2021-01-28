@@ -4,3 +4,4 @@ Zachary,Tigchelaar,zachary.tigchelaar@ucalgary.ca,jzactmbk,ENCM369
 John,Santos,john.santos2@ucalgary.ca,JohnVSantos,ENCM369
 Nabiha,Alam,nabiha.alam@ucalgary.ca,NabihaAlam,ENCM369
 Emily,Knight,emily.knight2@ucalgary.ca,emilyzk,2021_ENCM369
+Madeline,Brown,madeline.brown@ucalgary.ca,madelinebrownn,ENCM369
