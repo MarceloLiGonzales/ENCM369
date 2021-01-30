@@ -94,7 +94,9 @@ Promises:
 */
 void UserAppRun(void)
 {
-
+    u32 u32Counter = 285714;
+    for(; u32Counter > 0; u32Counter--);
+    LATA = LATA ^ 0x01;
 
 } /* end UserAppRun */
 

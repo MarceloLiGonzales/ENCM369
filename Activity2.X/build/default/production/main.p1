@@ -2581,25 +2581,25 @@ Version 4.0 HI-TECH Software Intermediate Code
 "47
 [; ;main.c: 47:   UserAppInitialize();
 [e ( _UserAppInitialize ..  ]
-"53
-[; ;main.c: 53:   while(1)
+"52
+[; ;main.c: 52:   while(1)
 [e :U 2274 ]
-"54
-[; ;main.c: 54:   {
+"53
+[; ;main.c: 53:   {
 {
-"58
-[; ;main.c: 58:     UserAppRun();
+"57
+[; ;main.c: 57:     UserAppRun();
 [e ( _UserAppRun ..  ]
-"63
-[; ;main.c: 63:     SystemSleep();
+"62
+[; ;main.c: 62:     SystemSleep();
 [e ( _SystemSleep ..  ]
-"66
-[; ;main.c: 66:   }
+"65
+[; ;main.c: 65:   }
 }
 [e :U 2273 ]
 [e $U 2274  ]
 [e :U 2275 ]
-"68
-[; ;main.c: 68: }
+"67
+[; ;main.c: 67: }
 [e :UE 2272 ]
 }

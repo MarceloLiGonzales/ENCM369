@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.31 build 20201012212115 
-                                                                                               Sat Jan 30 12:56:59 2021
+                                                                                               Sat Jan 30 13:24:26 2021
 
 Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1 
      1                           	processor	18F27Q43
@@ -190,10 +190,10 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    166  01FFB0  ECAE  F0FF         	call	_UserAppInitialize	;wreg free
    167  01FFB4                     l776:
    168                           
-   169                           ;main.c: 54:   {;main.c: 58:     UserAppRun();
+   169                           ;main.c: 53:   {;main.c: 57:     UserAppRun();
    170  01FFB4  ECE2  F0FF         	call	_UserAppRun	;wreg free
    171  01FFB8                     
-   172                           ;main.c: 63:     SystemSleep();
+   172                           ;main.c: 62:     SystemSleep();
    173  01FFB8  ECAD  F0FF         	call	_SystemSleep	;wreg free
    174  01FFBC  EFDA  F0FF         	goto	l776
    175  01FFC0  EFFE  F0FF         	goto	start
@@ -245,12 +245,12 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    211  01FFC4                     _UserAppRun:
    212                           	callstack 127
    213  01FFC4                     
-   214                           ;user_app.c: 97:     u32 u32Counter = 142822;
-   215  01FFC4  0EE6               	movlw	230
+   214                           ;user_app.c: 97:     u32 u32Counter = 285714;
+   215  01FFC4  0E12               	movlw	18
    216  01FFC6  6E0E               	movwf	UserAppRun@u32Counter^(0+1280),c
-   217  01FFC8  0E2D               	movlw	45
+   217  01FFC8  0E5C               	movlw	92
    218  01FFCA  6E0F               	movwf	(UserAppRun@u32Counter+1)^(0+1280),c
-   219  01FFCC  0E02               	movlw	2
+   219  01FFCC  0E04               	movlw	4
    220  01FFCE  6E10               	movwf	(UserAppRun@u32Counter+2)^(0+1280),c
    221  01FFD0  0E00               	movlw	0
    222  01FFD2  6E11               	movwf	(UserAppRun@u32Counter+3)^(0+1280),c
@@ -271,9 +271,9 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    237  01FFF0  EFEA  F0FF         	goto	l746
    238  01FFF4                     u10:
    239  01FFF4                     
-   240                           ;user_app.c: 99:     LATA = (LATA + 0x01) | 0x80;
-   241  01FFF4  28BE               	incf	190,w,c	;volatile
-   242  01FFF6  0980               	iorlw	128
+   240                           ;user_app.c: 99:     LATA = LATA ^ 0x01;
+   241  01FFF4  50BE               	movf	190,w,c	;volatile
+   242  01FFF6  0A01               	xorlw	1
    243  01FFF8  6EBE               	movwf	190,c	;volatile
    244  01FFFA  0012               	return		;funcret
    245  01FFFC                     __end_of_UserAppRun:
@@ -488,8 +488,8 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    414  01FF5E                     _GpioSetup:
    415                           	callstack 127
    416  01FF5E                     
-   417                           ;encm369_pic18.c: 91:     PORTA = 0x80;
-   418  01FF5E  0E80               	movlw	128
+   417                           ;encm369_pic18.c: 91:     PORTA = 0x00;
+   418  01FF5E  0E00               	movlw	0
    419  01FF60  6ECE               	movwf	206,c	;volatile
    420                           
    421                           ;encm369_pic18.c: 92:     TRISA = 0x00;
@@ -1101,7 +1101,7 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.31 build 20201012212115 
-Symbol Table                                                                                   Sat Jan 30 12:56:59 2021
+Symbol Table                                                                                   Sat Jan 30 13:24:26 2021
 
      __size_of_SysTickSetup 0022                          l13 FF58                          l22 FF5A  
                         l16 FF6C                          l19 FFA0                          l60 FFFA  
