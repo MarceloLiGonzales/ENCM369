@@ -2547,9 +2547,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _UserAppRun ]
 [f ]
 "97
-[; ;user_app.c: 97:     u32 u32Counter = 285714;
+[; ;user_app.c: 97:     u32 u32Counter = 142822;
 [v _u32Counter `ul ~T0 @X0 1 a ]
-[e = _u32Counter -> -> 285714 `l `ul ]
+[e = _u32Counter -> -> 142822 `l `ul ]
 "98
 [; ;user_app.c: 98:     for(; u32Counter > 0; u32Counter--);
 {
@@ -2561,9 +2561,30 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 2275 ]
 }
 "99
-[; ;user_app.c: 99:     LATA = LATA ^ 0x01;
-[e = _LATA -> ^ -> _LATA `i -> 1 `i `uc ]
+[; ;user_app.c: 99:     if ((LATA & 0x3F) == 0x3F)
+[e $ ! == & -> _LATA `i -> 63 `i -> 63 `i 2277  ]
+"100
+[; ;user_app.c: 100:     {
+{
 "101
-[; ;user_app.c: 101: }
+[; ;user_app.c: 101:         LATA = (LATA & 0xC0);
+[e = _LATA -> & -> _LATA `i -> 192 `i `uc ]
+"102
+[; ;user_app.c: 102:     } else
+}
+[e $U 2278  ]
+[e :U 2277 ]
+"103
+[; ;user_app.c: 103:     {
+{
+"104
+[; ;user_app.c: 104:         LATA += 0x01;
+[e =+ _LATA -> -> 1 `i `Vuc ]
+"105
+[; ;user_app.c: 105:     }
+}
+[e :U 2278 ]
+"107
+[; ;user_app.c: 107: }
 [e :UE 2273 ]
 }
