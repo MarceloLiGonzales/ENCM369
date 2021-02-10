@@ -253,7 +253,7 @@ text6 1FF3E 1FF3F CODE 1FF3E 0
 %locals
 dist/default/production\Activity2.X.production.o
 C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h
-C:\Users\marce\AppData\Local\Temp\sj40.s
+C:\Users\marce\AppData\Local\Temp\sasc.s
 5083 1FF54 0 CODE 0
 5085 1FF54 0 CODE 0
 5088 1FF54 0 CODE 0

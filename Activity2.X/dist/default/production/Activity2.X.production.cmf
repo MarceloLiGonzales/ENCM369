@@ -24,7 +24,7 @@ text6 CODE 0 1FF3E 1FF3E 2 1
 cstackCOMRAM COMRAM 1 50E 50E 4 1
 bssCOMRAM COMRAM 1 501 501 D 1
 config CONFIG 4 300000 300000 A 1
-$C:\Users\marce\AppData\Local\Temp\sj40.o
+$C:\Users\marce\AppData\Local\Temp\sasc.o
 idloc IDLOC 5 200000 200000 20 1
 init CODE 0 1FFFC 1FFFC 4 1
 reset_vec CODE 0 0 0 4 1
@@ -125,18 +125,18 @@ $dist/default/production\Activity2.X.production.o
 1FF96 text0 CODE >47:C:\Users\marce\OneDrive\Documents\GitHub\ENCM369\Activity2.X\main.c
 1FF9A text0 CODE >57:C:\Users\marce\OneDrive\Documents\GitHub\ENCM369\Activity2.X\main.c
 1FF9E text0 CODE >62:C:\Users\marce\OneDrive\Documents\GitHub\ENCM369\Activity2.X\main.c
-1FF54 cinit CODE >5083:C:\Users\marce\AppData\Local\Temp\sj40.s
-1FF54 cinit CODE >5085:C:\Users\marce\AppData\Local\Temp\sj40.s
-1FF54 cinit CODE >5088:C:\Users\marce\AppData\Local\Temp\sj40.s
-1FF54 cinit CODE >5110:C:\Users\marce\AppData\Local\Temp\sj40.s
-1FF58 cinit CODE >5111:C:\Users\marce\AppData\Local\Temp\sj40.s
-1FF5A cinit CODE >5112:C:\Users\marce\AppData\Local\Temp\sj40.s
-1FF5A cinit CODE >5113:C:\Users\marce\AppData\Local\Temp\sj40.s
-1FF5C cinit CODE >5114:C:\Users\marce\AppData\Local\Temp\sj40.s
-1FF5E cinit CODE >5115:C:\Users\marce\AppData\Local\Temp\sj40.s
-1FF60 cinit CODE >5121:C:\Users\marce\AppData\Local\Temp\sj40.s
-1FF60 cinit CODE >5123:C:\Users\marce\AppData\Local\Temp\sj40.s
-1FF62 cinit CODE >5124:C:\Users\marce\AppData\Local\Temp\sj40.s
+1FF54 cinit CODE >5083:C:\Users\marce\AppData\Local\Temp\sasc.s
+1FF54 cinit CODE >5085:C:\Users\marce\AppData\Local\Temp\sasc.s
+1FF54 cinit CODE >5088:C:\Users\marce\AppData\Local\Temp\sasc.s
+1FF54 cinit CODE >5110:C:\Users\marce\AppData\Local\Temp\sasc.s
+1FF58 cinit CODE >5111:C:\Users\marce\AppData\Local\Temp\sasc.s
+1FF5A cinit CODE >5112:C:\Users\marce\AppData\Local\Temp\sasc.s
+1FF5A cinit CODE >5113:C:\Users\marce\AppData\Local\Temp\sasc.s
+1FF5C cinit CODE >5114:C:\Users\marce\AppData\Local\Temp\sasc.s
+1FF5E cinit CODE >5115:C:\Users\marce\AppData\Local\Temp\sasc.s
+1FF60 cinit CODE >5121:C:\Users\marce\AppData\Local\Temp\sasc.s
+1FF60 cinit CODE >5123:C:\Users\marce\AppData\Local\Temp\sasc.s
+1FF62 cinit CODE >5124:C:\Users\marce\AppData\Local\Temp\sasc.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -155,22 +155,22 @@ __Hspace_1 512 0 ABS 0 - dist/default/production\Activity2.X.production.o
 __Hspace_2 0 0 ABS 0 - dist/default/production\Activity2.X.production.o
 __Hspace_4 60000A 0 ABS 0 - dist/default/production\Activity2.X.production.o
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production\Activity2.X.production.o
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\marce\AppData\Local\Temp\sj40.o
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\marce\AppData\Local\Temp\sasc.o
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\Activity2.X.production.o
 __Lsmallconst 0 0 SMALLCONST 0 smallconst dist/default/production\Activity2.X.production.o
 _LATA 4BE 0 ABS 0 - dist/default/production\Activity2.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\marce\AppData\Local\Temp\sj40.o
+___sp 0 0 STACK 2 stack C:\Users\marce\AppData\Local\Temp\sasc.o
 _main 1FF88 0 CODE 0 text0 dist/default/production\Activity2.X.production.o
-start 1FFFC 0 CODE 0 init C:\Users\marce\AppData\Local\Temp\sj40.o
+start 1FFFC 0 CODE 0 init C:\Users\marce\AppData\Local\Temp\sasc.o
 __size_of_main 0 0 ABS 0 - dist/default/production\Activity2.X.production.o
 __HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\Activity2.X.production.o
 __size_of_SystemSleep 0 0 ABS 0 - dist/default/production\Activity2.X.production.o
 __Hpowerup 0 0 CODE 0 powerup dist/default/production\Activity2.X.production.o
-__accesstop 560 0 ABS 0 - C:\Users\marce\AppData\Local\Temp\sj40.o
-intlevel0 0 0 CODE 0 text C:\Users\marce\AppData\Local\Temp\sj40.o
-intlevel1 0 0 CODE 0 text C:\Users\marce\AppData\Local\Temp\sj40.o
-intlevel2 0 0 CODE 0 text C:\Users\marce\AppData\Local\Temp\sj40.o
-intlevel3 0 0 CODE 0 text C:\Users\marce\AppData\Local\Temp\sj40.o
+__accesstop 560 0 ABS 0 - C:\Users\marce\AppData\Local\Temp\sasc.o
+intlevel0 0 0 CODE 0 text C:\Users\marce\AppData\Local\Temp\sasc.o
+intlevel1 0 0 CODE 0 text C:\Users\marce\AppData\Local\Temp\sasc.o
+intlevel2 0 0 CODE 0 text C:\Users\marce\AppData\Local\Temp\sasc.o
+intlevel3 0 0 CODE 0 text C:\Users\marce\AppData\Local\Temp\sasc.o
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\Activity2.X.production.o
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\Activity2.X.production.o
 __Hifardata 0 0 CODE 0 ifardata dist/default/production\Activity2.X.production.o
@@ -178,8 +178,8 @@ __Hclrtext 0 0 ABS 0 clrtext dist/default/production\Activity2.X.production.o
 _UserAppRun 1FFAA 0 CODE 0 text1 dist/default/production\Activity2.X.production.o
 _ANSELA 400 0 ABS 0 - dist/default/production\Activity2.X.production.o
 _G_u32SystemTime1s 505 0 COMRAM 1 bssCOMRAM dist/default/production\Activity2.X.production.o
-___inthi_sp 0 0 STACK 2 stack C:\Users\marce\AppData\Local\Temp\sj40.o
-___intlo_sp 0 0 STACK 2 stack C:\Users\marce\AppData\Local\Temp\sj40.o
+___inthi_sp 0 0 STACK 2 stack C:\Users\marce\AppData\Local\Temp\sasc.o
+___intlo_sp 0 0 STACK 2 stack C:\Users\marce\AppData\Local\Temp\sasc.o
 __Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\Activity2.X.production.o
 __Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\Activity2.X.production.o
 __size_of_UserAppInitialize 0 0 ABS 0 - dist/default/production\Activity2.X.production.o
@@ -239,7 +239,7 @@ __Hbank36 0 0 ABS 0 bank36 dist/default/production\Activity2.X.production.o
 __Hbank37 0 0 ABS 0 bank37 dist/default/production\Activity2.X.production.o
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\Activity2.X.production.o
 __Hbigram 0 0 ABS 0 bigram dist/default/production\Activity2.X.production.o
-__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\marce\AppData\Local\Temp\sj40.o
+__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\marce\AppData\Local\Temp\sasc.o
 _SystemSleep 1FF40 0 CODE 0 text3 dist/default/production\Activity2.X.production.o
 __Hcomram 0 0 ABS 0 comram dist/default/production\Activity2.X.production.o
 __Hconfig 30000A 0 CONFIG 4 config dist/default/production\Activity2.X.production.o
@@ -332,8 +332,8 @@ __end_of_SysTickSetup 1FF88 0 CODE 0 text4 dist/default/production\Activity2.X.p
 _UserAppInitialize 1FF42 0 CODE 0 text2 dist/default/production\Activity2.X.production.o
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/production\Activity2.X.production.o
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production\Activity2.X.production.o
-stackhi 25FF 0 ABS 0 - C:\Users\marce\AppData\Local\Temp\sj40.o
-stacklo 560 0 ABS 0 - C:\Users\marce\AppData\Local\Temp\sj40.o
+stackhi 25FF 0 ABS 0 - C:\Users\marce\AppData\Local\Temp\sasc.o
+stacklo 560 0 ABS 0 - C:\Users\marce\AppData\Local\Temp\sasc.o
 __Lirdata 0 0 CODE 0 irdata dist/default/production\Activity2.X.production.o
 __Lspace_0 0 0 ABS 0 - dist/default/production\Activity2.X.production.o
 __Lspace_1 0 0 ABS 0 - dist/default/production\Activity2.X.production.o
@@ -356,7 +356,7 @@ __ptext4 1FF66 0 CODE 0 text4 dist/default/production\Activity2.X.production.o
 __ptext5 1FF44 0 CODE 0 text5 dist/default/production\Activity2.X.production.o
 __ptext6 1FF3E 0 CODE 0 text6 dist/default/production\Activity2.X.production.o
 __Lstruct 0 0 COMRAM 1 struct dist/default/production\Activity2.X.production.o
-__ramtop 2600 0 RAM 0 ramtop C:\Users\marce\AppData\Local\Temp\sj40.o
+__ramtop 2600 0 RAM 0 ramtop C:\Users\marce\AppData\Local\Temp\sasc.o
 __Lpowerup 0 0 CODE 0 powerup dist/default/production\Activity2.X.production.o
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\Activity2.X.production.o
 _ClockSetup 1FF3E 0 CODE 0 text6 dist/default/production\Activity2.X.production.o

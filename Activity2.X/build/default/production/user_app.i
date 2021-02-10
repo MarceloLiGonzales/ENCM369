@@ -27315,7 +27315,7 @@ void UserAppInitialize(void)
 # 95 "user_app.c"
 void UserAppRun(void)
 {
-    u32 u32Counter = 142822;
+    u32 u32Counter = 286400;
     for(; u32Counter > 0; u32Counter--);
     if ((LATA & 0x3F) == 0x3F)
     {

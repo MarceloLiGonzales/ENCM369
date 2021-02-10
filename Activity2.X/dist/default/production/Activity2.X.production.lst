@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.31 build 20201012212115 
-                                                                                               Mon Feb 08 08:42:39 2021
+                                                                                               Wed Feb 10 13:43:14 2021
 
 Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1 
      1                           	processor	18F27Q43
@@ -245,12 +245,12 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    211  01FFAA                     _UserAppRun:
    212                           	callstack 127
    213  01FFAA                     
-   214                           ;user_app.c: 97:     u32 u32Counter = 142822;
-   215  01FFAA  0EE6               	movlw	230
+   214                           ;user_app.c: 97:     u32 u32Counter = 286400;
+   215  01FFAA  0EC0               	movlw	192
    216  01FFAC  6E0E               	movwf	UserAppRun@u32Counter^(0+1280),c
-   217  01FFAE  0E2D               	movlw	45
+   217  01FFAE  0E5E               	movlw	94
    218  01FFB0  6E0F               	movwf	(UserAppRun@u32Counter+1)^(0+1280),c
-   219  01FFB2  0E02               	movlw	2
+   219  01FFB2  0E04               	movlw	4
    220  01FFB4  6E10               	movwf	(UserAppRun@u32Counter+2)^(0+1280),c
    221  01FFB6  0E00               	movlw	0
    222  01FFB8  6E11               	movwf	(UserAppRun@u32Counter+3)^(0+1280),c
@@ -1120,7 +1120,7 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.31 build 20201012212115 
-Symbol Table                                                                                   Mon Feb 08 08:42:39 2021
+Symbol Table                                                                                   Wed Feb 10 13:43:14 2021
 
      __size_of_SysTickSetup 0022                          l13 FF3E                          l22 FF40  
                         l16 FF52                          l19 FF86                          l62 FFFA  

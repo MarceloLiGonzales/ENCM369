@@ -94,14 +94,16 @@ Promises:
 */
 void UserAppRun(void)
 {
-    u32 u32Counter = 142822;
-    for(; u32Counter > 0; u32Counter--);
-    if ((LATA & 0x3F) == 0x3F)
+    u32 u32Counter = 286400;
+    for(; u32Counter > 0; u32Counter--); //wait 250 ms
+    
+    if ((LATA & 0x3F) == 0x3F)  //check that bits 0-5 are on
     {
-        LATA = (LATA & 0xC0);
-    } else 
+        LATA = (LATA & 0xC0);  //turn bits 0-5 off
+    } 
+    else 
     {
-        LATA += 0x01;
+        LATA += 0x01; //add one
     }
 
 } /* end UserAppRun */

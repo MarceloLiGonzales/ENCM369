@@ -2547,9 +2547,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _UserAppRun ]
 [f ]
 "97
-[; ;user_app.c: 97:     u32 u32Counter = 142822;
+[; ;user_app.c: 97:     u32 u32Counter = 286400;
 [v _u32Counter `ul ~T0 @X0 1 a ]
-[e = _u32Counter -> -> 142822 `l `ul ]
+[e = _u32Counter -> -> 286400 `l `ul ]
 "98
 [; ;user_app.c: 98:     for(; u32Counter > 0; u32Counter--);
 {
