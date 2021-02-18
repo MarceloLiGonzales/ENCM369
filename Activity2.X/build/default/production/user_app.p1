@@ -1,7 +1,10 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"45585 C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h
-[; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 45585: extern volatile unsigned char LATA __attribute__((address(0x4BE)));
-[v _LATA `Vuc ~T0 @X0 0 e@1214 ]
+"46157 C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h
+[; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 46157: extern volatile unsigned char PORTB __attribute__((address(0x4CF)));
+[v _PORTB `Vuc ~T0 @X0 0 e@1231 ]
+"46095
+[; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 46095: extern volatile unsigned char PORTA __attribute__((address(0x4CE)));
+[v _PORTA `Vuc ~T0 @X0 0 e@1230 ]
 "30 ./configuration.h
 [p x FEXTOSC  =  OFF     ]
 "31
@@ -2547,44 +2550,37 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _UserAppRun ]
 [f ]
 "97
-[; ;user_app.c: 97:     u32 u32Counter = 286400;
-[v _u32Counter `ul ~T0 @X0 1 a ]
-[e = _u32Counter -> -> 286400 `l `ul ]
+[; ;user_app.c: 97:     static u32 u32LEDCounter = 0;
+[v F15920 `ul ~T0 @X0 1 s u32LEDCounter ]
+[i F15920
+-> -> -> 0 `i `l `ul
+]
 "98
-[; ;user_app.c: 98:     for(; u32Counter > 0; u32Counter--);
-{
-[e $ > _u32Counter -> -> -> 0 `i `l `ul 2274  ]
-[e $U 2275  ]
-[e :U 2274 ]
-[e -- _u32Counter -> -> -> 1 `i `l `ul ]
-[e $ > _u32Counter -> -> -> 0 `i `l `ul 2274  ]
-[e :U 2275 ]
-}
-"99
-[; ;user_app.c: 99:     if ((LATA & 0x3F) == 0x3F)
-[e $ ! == & -> _LATA `i -> 63 `i -> 63 `i 2277  ]
+[; ;user_app.c: 98:     static u8 u8PreviousRB5State = 0x00;
+[v F15921 `uc ~T0 @X0 1 s u8PreviousRB5State ]
+[i F15921
+-> -> 0 `i `uc
+]
 "100
-[; ;user_app.c: 100:     {
-{
+[; ;user_app.c: 100:     if ((u8PreviousRB5State == 0) && ((PORTB & 0x20) == 0x20))
+[e $ ! && == -> F15921 `i -> 0 `i == & -> _PORTB `i -> 32 `i -> 32 `i 2274  ]
 "101
-[; ;user_app.c: 101:         LATA = (LATA & 0xC0);
-[e = _LATA -> & -> _LATA `i -> 192 `i `uc ]
-"102
-[; ;user_app.c: 102:     } else
-}
-[e $U 2278  ]
-[e :U 2277 ]
-"103
-[; ;user_app.c: 103:     {
+[; ;user_app.c: 101:     {
 {
+"102
+[; ;user_app.c: 102:         u32LEDCounter += 1;
+[e =+ F15920 -> -> -> 1 `i `l `ul ]
+"103
+[; ;user_app.c: 103:         PORTA |= (u32LEDCounter & 0x3F);
+[e =| _PORTA -> & F15920 -> -> -> 63 `i `l `ul `Vuc ]
 "104
-[; ;user_app.c: 104:         LATA += 0x01;
-[e =+ _LATA -> -> 1 `i `Vuc ]
-"105
-[; ;user_app.c: 105:     }
+[; ;user_app.c: 104:     }
 }
-[e :U 2278 ]
-"107
-[; ;user_app.c: 107: }
+[e :U 2274 ]
+"105
+[; ;user_app.c: 105:     u8PreviousRB5State = PORTB & 0b00100000;
+[e = F15921 -> & -> _PORTB `i -> 32 `i `uc ]
+"106
+[; ;user_app.c: 106: }
 [e :UE 2273 ]
 }

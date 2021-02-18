@@ -27315,14 +27315,13 @@ void UserAppInitialize(void)
 # 95 "user_app.c"
 void UserAppRun(void)
 {
-    u32 u32Counter = 286400;
-    for(; u32Counter > 0; u32Counter--);
-    if ((LATA & 0x3F) == 0x3F)
-    {
-        LATA = (LATA & 0xC0);
-    } else
-    {
-        LATA += 0x01;
-    }
+    static u32 u32LEDCounter = 0;
+    static u8 u8PreviousRB5State = 0x00;
 
+    if ((u8PreviousRB5State == 0) && ((PORTB & 0x20) == 0x20))
+    {
+        u32LEDCounter += 1;
+        PORTA |= (u32LEDCounter & 0x3F);
+    }
+    u8PreviousRB5State = PORTB & 0b00100000;
 }

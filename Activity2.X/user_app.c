@@ -94,18 +94,15 @@ Promises:
 */
 void UserAppRun(void)
 {
-    u32 u32Counter = 286400;
-    for(; u32Counter > 0; u32Counter--); //wait 250 ms
+    static u32 u32LEDCounter = 0;
+    static u8 u8PreviousRB5State = 0x00;
     
-    if ((LATA & 0x3F) == 0x3F)  //check that bits 0-5 are on
+    if ((u8PreviousRB5State == 0) && ((PORTB & 0x20) == 0x20))
     {
-        LATA = (LATA & 0xC0);  //turn bits 0-5 off
-    } 
-    else 
-    {
-        LATA += 0x01; //add one
+        u32LEDCounter += 1; //add one
+        PORTA |= (u32LEDCounter & 0x3F);
     }
-
+    u8PreviousRB5State = PORTB & 0b00100000;
 } /* end UserAppRun */
 
 

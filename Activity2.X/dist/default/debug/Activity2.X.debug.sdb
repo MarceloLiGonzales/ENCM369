@@ -27,59 +27,74 @@
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v2_31\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"70 C:\Users\marce\Downloads\UNIVERSITY\2nd_year\Second Sem\ENCM_369\Activity 2\Activity2.X\encm369_pic18.c
+"70 C:\Users\marce\OneDrive\Documents\GitHub\ENCM369\Activity2.X\encm369_pic18.c
 [v _ClockSetup ClockSetup `(v  1 e 1 0 ]
 "89
 [v _GpioSetup GpioSetup `(v  1 e 1 0 ]
-"111
+"113
 [v _SysTickSetup SysTickSetup `(v  1 e 1 0 ]
-"133
+"135
 [v _SystemSleep SystemSleep `(v  1 e 1 0 ]
-"35 C:\Users\marce\Downloads\UNIVERSITY\2nd_year\Second Sem\ENCM_369\Activity 2\Activity2.X\main.c
+"35 C:\Users\marce\OneDrive\Documents\GitHub\ENCM369\Activity2.X\main.c
 [v _main main `(v  1 e 1 0 ]
-"76 C:\Users\marce\Downloads\UNIVERSITY\2nd_year\Second Sem\ENCM_369\Activity 2\Activity2.X\user_app.c
+"76 C:\Users\marce\OneDrive\Documents\GitHub\ENCM369\Activity2.X\user_app.c
 [v _UserAppInitialize UserAppInitialize `(v  1 e 1 0 ]
+"95
+[v _UserAppRun UserAppRun `(v  1 e 1 0 ]
 "37918 C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h
 "37918
 [v _ANSELA ANSELA `VEuc  1 e 1 @1024 ]
-"45585
-[v _LATA LATA `VEuc  1 e 1 @1214 ]
+"38414
+[v _ANSELB ANSELB `VEuc  1 e 1 @1032 ]
 "45840
 [v _TRISA TRISA `VEuc  1 e 1 @1222 ]
+"45902
+[v _TRISB TRISB `VEuc  1 e 1 @1223 ]
 "46095
 [v _PORTA PORTA `VEuc  1 e 1 @1230 ]
-"14 C:\Users\marce\Downloads\UNIVERSITY\2nd_year\Second Sem\ENCM_369\Activity 2\Activity2.X\main.c
+"46157
+[v _PORTB PORTB `VEuc  1 e 1 @1231 ]
+"14 C:\Users\marce\OneDrive\Documents\GitHub\ENCM369\Activity2.X\main.c
 [v _G_u32SystemTime1ms G_u32SystemTime1ms `VEul  1 e 4 0 ]
 "15
 [v _G_u32SystemTime1s G_u32SystemTime1s `VEul  1 e 4 0 ]
 "16
 [v _G_u32SystemFlags G_u32SystemFlags `VEul  1 e 4 0 ]
-"33 C:\Users\marce\Downloads\UNIVERSITY\2nd_year\Second Sem\ENCM_369\Activity 2\Activity2.X\user_app.c
+"33 C:\Users\marce\OneDrive\Documents\GitHub\ENCM369\Activity2.X\user_app.c
 [v _G_u8UserAppFlags G_u8UserAppFlags `VEuc  1 e 1 0 ]
-"35 C:\Users\marce\Downloads\UNIVERSITY\2nd_year\Second Sem\ENCM_369\Activity 2\Activity2.X\main.c
+"35 C:\Users\marce\OneDrive\Documents\GitHub\ENCM369\Activity2.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
 "67
 } 0
-"76 C:\Users\marce\Downloads\UNIVERSITY\2nd_year\Second Sem\ENCM_369\Activity 2\Activity2.X\user_app.c
+"95 C:\Users\marce\OneDrive\Documents\GitHub\ENCM369\Activity2.X\user_app.c
+[v _UserAppRun UserAppRun `(v  1 e 1 0 ]
+{
+"97
+[v UserAppRun@u32LEDCounter u32LEDCounter `ul  1 s 4 u32LEDCounter ]
+"98
+[v UserAppRun@u8PreviousRB5State u8PreviousRB5State `uc  1 s 1 u8PreviousRB5State ]
+"107
+} 0
+"76
 [v _UserAppInitialize UserAppInitialize `(v  1 e 1 0 ]
 {
 "80
 } 0
-"133 C:\Users\marce\Downloads\UNIVERSITY\2nd_year\Second Sem\ENCM_369\Activity 2\Activity2.X\encm369_pic18.c
+"135 C:\Users\marce\OneDrive\Documents\GitHub\ENCM369\Activity2.X\encm369_pic18.c
 [v _SystemSleep SystemSleep `(v  1 e 1 0 ]
 {
-"136
+"138
 } 0
-"111
+"113
 [v _SysTickSetup SysTickSetup `(v  1 e 1 0 ]
 {
-"116
+"118
 } 0
 "89
 [v _GpioSetup GpioSetup `(v  1 e 1 0 ]
 {
-"96
+"98
 } 0
 "70
 [v _ClockSetup ClockSetup `(v  1 e 1 0 ]
