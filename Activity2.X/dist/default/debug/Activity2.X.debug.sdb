@@ -70,11 +70,15 @@
 "95 C:\Users\marce\OneDrive\Documents\GitHub\ENCM369\Activity2.X\user_app.c
 [v _UserAppRun UserAppRun `(v  1 e 1 0 ]
 {
+"101
+[v UserAppRun@u32Delay u32Delay `ul  1 a 4 1 ]
 "97
 [v UserAppRun@u32LEDCounter u32LEDCounter `ul  1 s 4 u32LEDCounter ]
 "98
 [v UserAppRun@u8PreviousRB5State u8PreviousRB5State `uc  1 s 1 u8PreviousRB5State ]
-"106
+"99
+[v UserAppRun@u32ContinuousDelay u32ContinuousDelay `ul  1 s 4 u32ContinuousDelay ]
+"126
 } 0
 "76
 [v _UserAppInitialize UserAppInitialize `(v  1 e 1 0 ]

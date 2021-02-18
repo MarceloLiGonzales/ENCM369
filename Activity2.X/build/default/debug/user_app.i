@@ -27317,11 +27317,31 @@ void UserAppRun(void)
 {
     static u32 u32LEDCounter = 0;
     static u8 u8PreviousRB5State = 0x00;
+    static u32 u32ContinuousDelay = 0;
+
+    u32 u32Delay = 286400 / 25;
+    for(; u32Delay > 0; u32Delay--);
 
     if ((u8PreviousRB5State == 0) && ((PORTB & 0x20) == 0x20))
     {
         u32LEDCounter += 1;
         PORTA = (PORTA & 0xC0) | (u32LEDCounter & 0x3F);
     }
+
+    if ((u8PreviousRB5State == 0x20) && ((PORTB & 0x20) == 0x20) && u32ContinuousDelay > 286400)
+    {
+        u32LEDCounter += 1;
+        PORTA = (PORTA & 0xC0) | (u32LEDCounter & 0x3F);
+    }
+
+    if ((u8PreviousRB5State == 0x20) && ((PORTB & 0x20) == 0x20))
+    {
+        u32ContinuousDelay += 1;
+    }
+    else
+    {
+        u32ContinuousDelay = 0;
+    }
+
     u8PreviousRB5State = PORTB & 0b00100000;
 }

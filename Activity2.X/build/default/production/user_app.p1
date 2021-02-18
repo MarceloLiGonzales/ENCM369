@@ -2556,31 +2556,166 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> -> 0 `i `l `ul
 ]
 "98
-[; ;user_app.c: 98:     static u8 u8PreviousRB5State = 0x00;
-[v F15921 `uc ~T0 @X0 1 s u8PreviousRB5State ]
+[; ;user_app.c: 98:     static u8 u8PreviousRB3State = 0x00;
+[v F15921 `uc ~T0 @X0 1 s u8PreviousRB3State ]
 [i F15921
 -> -> 0 `i `uc
 ]
+"99
+[; ;user_app.c: 99:     static u8 u8PreviousRB5State = 0x00;
+[v F15922 `uc ~T0 @X0 1 s u8PreviousRB5State ]
+[i F15922
+-> -> 0 `i `uc
+]
 "100
-[; ;user_app.c: 100:     if ((u8PreviousRB5State == 0) && ((PORTB & 0x20) == 0x20))
-[e $ ! && == -> F15921 `i -> 0 `i == & -> _PORTB `i -> 32 `i -> 32 `i 2274  ]
+[; ;user_app.c: 100:     static u32 u32ContinuousIncrementDelay = 0;
+[v F15923 `ul ~T0 @X0 1 s u32ContinuousIncrementDelay ]
+[i F15923
+-> -> -> 0 `i `l `ul
+]
 "101
-[; ;user_app.c: 101:     {
-{
-"102
-[; ;user_app.c: 102:         u32LEDCounter += 1;
-[e =+ F15920 -> -> -> 1 `i `l `ul ]
+[; ;user_app.c: 101:     static u32 u32ContinuousDecrementDelay = 0;
+[v F15924 `ul ~T0 @X0 1 s u32ContinuousDecrementDelay ]
+[i F15924
+-> -> -> 0 `i `l `ul
+]
 "103
-[; ;user_app.c: 103:         PORTA = (PORTA & 0xC0) | (u32LEDCounter & 0x3F);
-[e = _PORTA -> | -> -> & -> _PORTA `i -> 192 `i `l `ul & F15920 -> -> -> 63 `i `l `ul `uc ]
+[; ;user_app.c: 103:     u32 u32Delay = 286400 / 25;
+[v _u32Delay `ul ~T0 @X0 1 a ]
+[e = _u32Delay -> / -> 286400 `l -> -> 25 `i `l `ul ]
 "104
-[; ;user_app.c: 104:     }
-}
+[; ;user_app.c: 104:     for(; u32Delay > 0; u32Delay--);
+{
+[e $ > _u32Delay -> -> -> 0 `i `l `ul 2274  ]
+[e $U 2275  ]
 [e :U 2274 ]
-"105
-[; ;user_app.c: 105:     u8PreviousRB5State = PORTB & 0b00100000;
-[e = F15921 -> & -> _PORTB `i -> 32 `i `uc ]
-"106
-[; ;user_app.c: 106: }
+[e -- _u32Delay -> -> -> 1 `i `l `ul ]
+[e $ > _u32Delay -> -> -> 0 `i `l `ul 2274  ]
+[e :U 2275 ]
+}
+"107
+[; ;user_app.c: 107:     if ((u8PreviousRB5State == 0) && ((PORTB & 0x20) == 0x20))
+[e $ ! && == -> F15922 `i -> 0 `i == & -> _PORTB `i -> 32 `i -> 32 `i 2277  ]
+"108
+[; ;user_app.c: 108:     {
+{
+"109
+[; ;user_app.c: 109:         u32LEDCounter += 1;
+[e =+ F15920 -> -> -> 1 `i `l `ul ]
+"110
+[; ;user_app.c: 110:         PORTA = (PORTA & 0xC0) | (u32LEDCounter & 0x3F);
+[e = _PORTA -> | -> -> & -> _PORTA `i -> 192 `i `l `ul & F15920 -> -> -> 63 `i `l `ul `uc ]
+"111
+[; ;user_app.c: 111:     }
+}
+[e :U 2277 ]
+"113
+[; ;user_app.c: 113:     if ((u8PreviousRB5State == 0x20) && ((PORTB & 0x20) == 0x20))
+[e $ ! && == -> F15922 `i -> 32 `i == & -> _PORTB `i -> 32 `i -> 32 `i 2278  ]
+"114
+[; ;user_app.c: 114:     {
+{
+"115
+[; ;user_app.c: 115:         u32ContinuousIncrementDelay += 1;
+[e =+ F15923 -> -> -> 1 `i `l `ul ]
+"117
+[; ;user_app.c: 117:         if ((u32ContinuousIncrementDelay > 100) && (u32ContinuousIncrementDelay % 32 == 0))
+[e $ ! && > F15923 -> -> -> 100 `i `l `ul == % F15923 -> -> -> 32 `i `l `ul -> -> -> 0 `i `l `ul 2279  ]
+"118
+[; ;user_app.c: 118:         {
+{
+"119
+[; ;user_app.c: 119:             u32LEDCounter += 1;
+[e =+ F15920 -> -> -> 1 `i `l `ul ]
+"120
+[; ;user_app.c: 120:             PORTA = (PORTA & 0xC0) | (u32LEDCounter & 0x3F);
+[e = _PORTA -> | -> -> & -> _PORTA `i -> 192 `i `l `ul & F15920 -> -> -> 63 `i `l `ul `uc ]
+"121
+[; ;user_app.c: 121:         }
+}
+[e :U 2279 ]
+"122
+[; ;user_app.c: 122:     }
+}
+[e $U 2280  ]
+"123
+[; ;user_app.c: 123:     else
+[e :U 2278 ]
+"124
+[; ;user_app.c: 124:     {
+{
+"125
+[; ;user_app.c: 125:         u32ContinuousIncrementDelay = 0;
+[e = F15923 -> -> -> 0 `i `l `ul ]
+"126
+[; ;user_app.c: 126:     }
+}
+[e :U 2280 ]
+"129
+[; ;user_app.c: 129:         if ((u8PreviousRB3State == 0) && ((PORTB & 0x08) == 0x08))
+[e $ ! && == -> F15921 `i -> 0 `i == & -> _PORTB `i -> 8 `i -> 8 `i 2281  ]
+"130
+[; ;user_app.c: 130:     {
+{
+"131
+[; ;user_app.c: 131:         u32LEDCounter -= 1;
+[e =- F15920 -> -> -> 1 `i `l `ul ]
+"132
+[; ;user_app.c: 132:         PORTA = (PORTA & 0xC0) | (u32LEDCounter & 0x3F);
+[e = _PORTA -> | -> -> & -> _PORTA `i -> 192 `i `l `ul & F15920 -> -> -> 63 `i `l `ul `uc ]
+"133
+[; ;user_app.c: 133:     }
+}
+[e :U 2281 ]
+"135
+[; ;user_app.c: 135:     if ((u8PreviousRB3State == 0x08) && ((PORTB & 0x08) == 0x08))
+[e $ ! && == -> F15921 `i -> 8 `i == & -> _PORTB `i -> 8 `i -> 8 `i 2282  ]
+"136
+[; ;user_app.c: 136:     {
+{
+"137
+[; ;user_app.c: 137:         u32ContinuousDecrementDelay += 1;
+[e =+ F15924 -> -> -> 1 `i `l `ul ]
+"139
+[; ;user_app.c: 139:         if ((u32ContinuousDecrementDelay > 100) && (u32ContinuousDecrementDelay % 32 == 0))
+[e $ ! && > F15924 -> -> -> 100 `i `l `ul == % F15924 -> -> -> 32 `i `l `ul -> -> -> 0 `i `l `ul 2283  ]
+"140
+[; ;user_app.c: 140:         {
+{
+"141
+[; ;user_app.c: 141:             u32LEDCounter -= 1;
+[e =- F15920 -> -> -> 1 `i `l `ul ]
+"142
+[; ;user_app.c: 142:             PORTA = (PORTA & 0xC0) | (u32LEDCounter & 0x3F);
+[e = _PORTA -> | -> -> & -> _PORTA `i -> 192 `i `l `ul & F15920 -> -> -> 63 `i `l `ul `uc ]
+"143
+[; ;user_app.c: 143:         }
+}
+[e :U 2283 ]
+"144
+[; ;user_app.c: 144:     }
+}
+[e $U 2284  ]
+"145
+[; ;user_app.c: 145:     else
+[e :U 2282 ]
+"146
+[; ;user_app.c: 146:     {
+{
+"147
+[; ;user_app.c: 147:         u32ContinuousDecrementDelay = 0;
+[e = F15924 -> -> -> 0 `i `l `ul ]
+"148
+[; ;user_app.c: 148:     }
+}
+[e :U 2284 ]
+"151
+[; ;user_app.c: 151:     u8PreviousRB3State = PORTB & 0x08;
+[e = F15921 -> & -> _PORTB `i -> 8 `i `uc ]
+"152
+[; ;user_app.c: 152:     u8PreviousRB5State = PORTB & 0x20;
+[e = F15922 -> & -> _PORTB `i -> 32 `i `uc ]
+"153
+[; ;user_app.c: 153: }
 [e :UE 2273 ]
 }
