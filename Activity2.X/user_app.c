@@ -97,10 +97,10 @@ void UserAppRun(void)
     static u32 u32LEDCounter = 0;
     static u8 u8PreviousRB5State = 0x00;
     
-    if ((u8PreviousRB5State == 0) && ((PORTB & 0x20) == 0x20))
+    if ((u8PreviousRB5State == 0) && ((PORTB & 0x20) == 0x20)) //check button was just pressed
     {
         u32LEDCounter += 1; //add one
-        PORTA |= (u32LEDCounter & 0x3F);
+        PORTA = (PORTA & 0xC0) | (u32LEDCounter & 0x3F); //write to bits RA5-RA0 while preserving RA7 and RA6
     }
     u8PreviousRB5State = PORTB & 0b00100000;
 } /* end UserAppRun */

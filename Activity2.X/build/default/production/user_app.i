@@ -27321,7 +27321,7 @@ void UserAppRun(void)
     if ((u8PreviousRB5State == 0) && ((PORTB & 0x20) == 0x20))
     {
         u32LEDCounter += 1;
-        PORTA |= (u32LEDCounter & 0x3F);
+        PORTA = (PORTA & 0xC0) | (u32LEDCounter & 0x3F);
     }
     u8PreviousRB5State = PORTB & 0b00100000;
 }
