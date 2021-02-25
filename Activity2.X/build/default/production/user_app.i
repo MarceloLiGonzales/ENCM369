@@ -27321,8 +27321,10 @@ void UserAppRun(void)
     static u32 u32ContinuousIncrementDelay = 0;
     static u32 u32ContinuousDecrementDelay = 0;
 
+
     u32 u32Delay = 286400 / 25;
     for(; u32Delay > 0; u32Delay--);
+
 
 
     if ((u8PreviousRB5State == 0) && ((PORTB & 0x20) == 0x20))
@@ -27347,6 +27349,7 @@ void UserAppRun(void)
     }
 
 
+
         if ((u8PreviousRB3State == 0) && ((PORTB & 0x08) == 0x08))
     {
         u32LEDCounter -= 1;
@@ -27367,6 +27370,7 @@ void UserAppRun(void)
     {
         u32ContinuousDecrementDelay = 0;
     }
+
 
 
     u8PreviousRB3State = PORTB & 0x08;

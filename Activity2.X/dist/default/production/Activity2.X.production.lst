@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.31 build 20201012212115 
-                                                                                               Thu Feb 18 12:26:11 2021
+                                                                                               Wed Feb 24 21:41:12 2021
 
 Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1 
      1                           	processor	18F27Q43
@@ -269,7 +269,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    235                           ;user_app.c: 97:     static u32 u32LEDCounter = 0;;user_app.c: 98:     static u8 u8Previ
       +                          ousRB3State = 0x00;;user_app.c: 99:     static u8 u8PreviousRB5State = 0x00;;user_app.c:
       +                           100:     static u32 u32ContinuousIncrementDelay = 0;;user_app.c: 101:     static u32 u3
-      +                          2ContinuousDecrementDelay = 0;;user_app.c: 103:     u32 u32Delay = 286400 / 25;
+      +                          2ContinuousDecrementDelay = 0;;user_app.c: 104:     u32 u32Delay = 286400 / 25;
    236  01FE06  0EC0               	movlw	192
    237  01FE08  6E20               	movwf	UserAppRun@u32Delay^(0+1280),c
    238  01FE0A  0E2C               	movlw	44
@@ -295,7 +295,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    258  01FE32  EF0B  F0FF         	goto	l772
    259  01FE36                     u10:
    260  01FE36                     
-   261                           ;user_app.c: 107:     if ((u8PreviousRB5State == 0) && ((PORTB & 0x20) == 0x20))
+   261                           ;user_app.c: 109:     if ((u8PreviousRB5State == 0) && ((PORTB & 0x20) == 0x20))
    262  01FE36  5019               	movf	UserAppRun@u8PreviousRB5State^(0+1280),w,c
    263  01FE38  A4D8               	btfss	status,2,c
    264  01FE3A  EF21  F0FF         	goto	u21
@@ -310,7 +310,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    273  01FE50  EF38  F0FF         	goto	l76
    274  01FE54                     u30:
    275  01FE54                     
-   276                           ;user_app.c: 108:     {;user_app.c: 109:         u32LEDCounter += 1;
+   276                           ;user_app.c: 110:     {;user_app.c: 111:         u32LEDCounter += 1;
    277  01FE54  0E01               	movlw	1
    278  01FE56  2609               	addwf	UserAppRun@u32LEDCounter^(0+1280),f,c
    279  01FE58  0E00               	movlw	0
@@ -318,7 +318,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    281  01FE5C  220B               	addwfc	(UserAppRun@u32LEDCounter+2)^(0+1280),f,c
    282  01FE5E  220C               	addwfc	(UserAppRun@u32LEDCounter+3)^(0+1280),f,c
    283                           
-   284                           ;user_app.c: 110:         PORTA = (PORTA & 0xC0) | (u32LEDCounter & 0x3F);
+   284                           ;user_app.c: 112:         PORTA = (PORTA & 0xC0) | (u32LEDCounter & 0x3F);
    285  01FE60  C509  F51C         	movff	UserAppRun@u32LEDCounter,??_UserAppRun
    286  01FE64  0E3F               	movlw	63
    287  01FE66  161C               	andwf	??_UserAppRun^(0+1280),f,c
@@ -328,7 +328,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    291  01FE6E  6ECE               	movwf	206,c	;volatile
    292  01FE70                     l76:
    293                           
-   294                           ;user_app.c: 113:     if ((u8PreviousRB5State == 0x20) && ((PORTB & 0x20) == 0x20))
+   294                           ;user_app.c: 115:     if ((u8PreviousRB5State == 0x20) && ((PORTB & 0x20) == 0x20))
    295  01FE70  0E20               	movlw	32
    296  01FE72  1819               	xorwf	UserAppRun@u8PreviousRB5State^(0+1280),w,c
    297  01FE74  A4D8               	btfss	status,2,c
@@ -344,7 +344,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    307  01FE8C  EF82  F0FF         	goto	l788
    308  01FE90                     u50:
    309  01FE90                     
-   310                           ;user_app.c: 114:     {;user_app.c: 115:         u32ContinuousIncrementDelay += 1;
+   310                           ;user_app.c: 116:     {;user_app.c: 117:         u32ContinuousIncrementDelay += 1;
    311  01FE90  0E01               	movlw	1
    312  01FE92  2605               	addwf	UserAppRun@u32ContinuousIncrementDelay^(0+1280),f,c
    313  01FE94  0E00               	movlw	0
@@ -352,7 +352,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    315  01FE98  2207               	addwfc	(UserAppRun@u32ContinuousIncrementDelay+2)^(0+1280),f,c
    316  01FE9A  2208               	addwfc	(UserAppRun@u32ContinuousIncrementDelay+3)^(0+1280),f,c
    317                           
-   318                           ;user_app.c: 117:         if ((u32ContinuousIncrementDelay > 100) && (u32ContinuousIncre
+   318                           ;user_app.c: 119:         if ((u32ContinuousIncrementDelay > 100) && (u32ContinuousIncre
       +                          mentDelay % 32 == 0))
    319  01FE9C  5008               	movf	(UserAppRun@u32ContinuousIncrementDelay+3)^(0+1280),w,c
    320  01FE9E  1007               	iorwf	(UserAppRun@u32ContinuousIncrementDelay+2)^(0+1280),w,c
@@ -389,7 +389,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    351  01FEE0  EF8A  F0FF         	goto	l79
    352  01FEE4                     u70:
    353  01FEE4                     
-   354                           ;user_app.c: 118:         {;user_app.c: 119:             u32LEDCounter += 1;
+   354                           ;user_app.c: 120:         {;user_app.c: 121:             u32LEDCounter += 1;
    355  01FEE4  0E01               	movlw	1
    356  01FEE6  2609               	addwf	UserAppRun@u32LEDCounter^(0+1280),f,c
    357  01FEE8  0E00               	movlw	0
@@ -397,7 +397,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    359  01FEEC  220B               	addwfc	(UserAppRun@u32LEDCounter+2)^(0+1280),f,c
    360  01FEEE  220C               	addwfc	(UserAppRun@u32LEDCounter+3)^(0+1280),f,c
    361                           
-   362                           ;user_app.c: 120:             PORTA = (PORTA & 0xC0) | (u32LEDCounter & 0x3F);
+   362                           ;user_app.c: 122:             PORTA = (PORTA & 0xC0) | (u32LEDCounter & 0x3F);
    363  01FEF0  C509  F51C         	movff	UserAppRun@u32LEDCounter,??_UserAppRun
    364  01FEF4  0E3F               	movlw	63
    365  01FEF6  161C               	andwf	??_UserAppRun^(0+1280),f,c
@@ -408,7 +408,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    370  01FF00  EF8A  F0FF         	goto	l79
    371  01FF04                     l788:
    372                           
-   373                           ;user_app.c: 124:     {;user_app.c: 125:         u32ContinuousIncrementDelay = 0;
+   373                           ;user_app.c: 126:     {;user_app.c: 127:         u32ContinuousIncrementDelay = 0;
    374  01FF04  0E00               	movlw	0
    375  01FF06  6E05               	movwf	UserAppRun@u32ContinuousIncrementDelay^(0+1280),c
    376  01FF08  0E00               	movlw	0
@@ -419,7 +419,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    381  01FF12  6E08               	movwf	(UserAppRun@u32ContinuousIncrementDelay+3)^(0+1280),c
    382  01FF14                     l79:
    383                           
-   384                           ;user_app.c: 129:         if ((u8PreviousRB3State == 0) && ((PORTB & 0x08) == 0x08))
+   384                           ;user_app.c: 132:         if ((u8PreviousRB3State == 0) && ((PORTB & 0x08) == 0x08))
    385  01FF14  501A               	movf	UserAppRun@u8PreviousRB3State^(0+1280),w,c
    386  01FF16  A4D8               	btfss	status,2,c
    387  01FF18  EF90  F0FF         	goto	u81
@@ -434,14 +434,14 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    396  01FF2E  EFA6  F0FF         	goto	l80
    397  01FF32                     u90:
    398  01FF32                     
-   399                           ;user_app.c: 130:     {;user_app.c: 131:         u32LEDCounter -= 1;
+   399                           ;user_app.c: 133:     {;user_app.c: 134:         u32LEDCounter -= 1;
    400  01FF32  0609               	decf	UserAppRun@u32LEDCounter^(0+1280),f,c
    401  01FF34  0E00               	movlw	0
    402  01FF36  5A0A               	subwfb	(UserAppRun@u32LEDCounter+1)^(0+1280),f,c
    403  01FF38  5A0B               	subwfb	(UserAppRun@u32LEDCounter+2)^(0+1280),f,c
    404  01FF3A  5A0C               	subwfb	(UserAppRun@u32LEDCounter+3)^(0+1280),f,c
    405                           
-   406                           ;user_app.c: 132:         PORTA = (PORTA & 0xC0) | (u32LEDCounter & 0x3F);
+   406                           ;user_app.c: 135:         PORTA = (PORTA & 0xC0) | (u32LEDCounter & 0x3F);
    407  01FF3C  C509  F51C         	movff	UserAppRun@u32LEDCounter,??_UserAppRun
    408  01FF40  0E3F               	movlw	63
    409  01FF42  161C               	andwf	??_UserAppRun^(0+1280),f,c
@@ -451,7 +451,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    413  01FF4A  6ECE               	movwf	206,c	;volatile
    414  01FF4C                     l80:
    415                           
-   416                           ;user_app.c: 135:     if ((u8PreviousRB3State == 0x08) && ((PORTB & 0x08) == 0x08))
+   416                           ;user_app.c: 138:     if ((u8PreviousRB3State == 0x08) && ((PORTB & 0x08) == 0x08))
    417  01FF4C  0E08               	movlw	8
    418  01FF4E  181A               	xorwf	UserAppRun@u8PreviousRB3State^(0+1280),w,c
    419  01FF50  A4D8               	btfss	status,2,c
@@ -467,7 +467,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    429  01FF68  EFEF  F0FF         	goto	l802
    430  01FF6C                     u110:
    431  01FF6C                     
-   432                           ;user_app.c: 136:     {;user_app.c: 137:         u32ContinuousDecrementDelay += 1;
+   432                           ;user_app.c: 139:     {;user_app.c: 140:         u32ContinuousDecrementDelay += 1;
    433  01FF6C  0E01               	movlw	1
    434  01FF6E  2601               	addwf	UserAppRun@u32ContinuousDecrementDelay^(0+1280),f,c
    435  01FF70  0E00               	movlw	0
@@ -475,7 +475,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    437  01FF74  2203               	addwfc	(UserAppRun@u32ContinuousDecrementDelay+2)^(0+1280),f,c
    438  01FF76  2204               	addwfc	(UserAppRun@u32ContinuousDecrementDelay+3)^(0+1280),f,c
    439                           
-   440                           ;user_app.c: 139:         if ((u32ContinuousDecrementDelay > 100) && (u32ContinuousDecre
+   440                           ;user_app.c: 142:         if ((u32ContinuousDecrementDelay > 100) && (u32ContinuousDecre
       +                          mentDelay % 32 == 0))
    441  01FF78  5004               	movf	(UserAppRun@u32ContinuousDecrementDelay+3)^(0+1280),w,c
    442  01FF7A  1003               	iorwf	(UserAppRun@u32ContinuousDecrementDelay+2)^(0+1280),w,c
@@ -512,14 +512,14 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    473  01FFBC  EFF7  F0FF         	goto	l804
    474  01FFC0                     u130:
    475  01FFC0                     
-   476                           ;user_app.c: 140:         {;user_app.c: 141:             u32LEDCounter -= 1;
+   476                           ;user_app.c: 143:         {;user_app.c: 144:             u32LEDCounter -= 1;
    477  01FFC0  0609               	decf	UserAppRun@u32LEDCounter^(0+1280),f,c
    478  01FFC2  0E00               	movlw	0
    479  01FFC4  5A0A               	subwfb	(UserAppRun@u32LEDCounter+1)^(0+1280),f,c
    480  01FFC6  5A0B               	subwfb	(UserAppRun@u32LEDCounter+2)^(0+1280),f,c
    481  01FFC8  5A0C               	subwfb	(UserAppRun@u32LEDCounter+3)^(0+1280),f,c
    482                           
-   483                           ;user_app.c: 142:             PORTA = (PORTA & 0xC0) | (u32LEDCounter & 0x3F);
+   483                           ;user_app.c: 145:             PORTA = (PORTA & 0xC0) | (u32LEDCounter & 0x3F);
    484  01FFCA  C509  F51C         	movff	UserAppRun@u32LEDCounter,??_UserAppRun
    485  01FFCE  0E3F               	movlw	63
    486  01FFD0  161C               	andwf	??_UserAppRun^(0+1280),f,c
@@ -530,7 +530,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    491  01FFDA  EFF7  F0FF         	goto	l804
    492  01FFDE                     l802:
    493                           
-   494                           ;user_app.c: 146:     {;user_app.c: 147:         u32ContinuousDecrementDelay = 0;
+   494                           ;user_app.c: 149:     {;user_app.c: 150:         u32ContinuousDecrementDelay = 0;
    495  01FFDE  0E00               	movlw	0
    496  01FFE0  6E01               	movwf	UserAppRun@u32ContinuousDecrementDelay^(0+1280),c
    497  01FFE2  0E00               	movlw	0
@@ -541,12 +541,12 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    502  01FFEC  6E04               	movwf	(UserAppRun@u32ContinuousDecrementDelay+3)^(0+1280),c
    503  01FFEE                     l804:
    504                           
-   505                           ;user_app.c: 151:     u8PreviousRB3State = PORTB & 0x08;
+   505                           ;user_app.c: 155:     u8PreviousRB3State = PORTB & 0x08;
    506  01FFEE  50CF               	movf	207,w,c	;volatile
    507  01FFF0  0B08               	andlw	8
    508  01FFF2  6E1A               	movwf	UserAppRun@u8PreviousRB3State^(0+1280),c
    509  01FFF4                     
-   510                           ;user_app.c: 152:     u8PreviousRB5State = PORTB & 0x20;
+   510                           ;user_app.c: 156:     u8PreviousRB5State = PORTB & 0x20;
    511  01FFF4  50CF               	movf	207,w,c	;volatile
    512  01FFF6  0B20               	andlw	32
    513  01FFF8  6E19               	movwf	UserAppRun@u8PreviousRB5State^(0+1280),c
@@ -1384,7 +1384,7 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.31 build 20201012212115 
-Symbol Table                                                                                   Thu Feb 18 12:26:11 2021
+Symbol Table                                                                                   Wed Feb 24 21:41:12 2021
 
                 __size_of_SysTickSetup 0022                                     l20 FDC0  
                                    l23 FDE2                                     l17 FD94  
