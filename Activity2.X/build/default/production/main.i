@@ -27290,7 +27290,12 @@ void SystemSleep(void);
 
 
 # 1 "./user_app.h" 1
-# 27 "./user_app.h"
+# 22 "./user_app.h"
+void TimeXus(u16 u16Period);
+
+
+
+
 void UserAppInitialize(void);
 void UserAppRun(void);
 # 106 "./configuration.h" 2
@@ -27333,9 +27338,11 @@ void main(void)
 
 
 
-                   ;
+    (LATA &= 0x7F);
     SystemSleep();
-                  ;
+    TimeXus(50000);
+    while((PIR3 & 0x80) !=0x80) {}
+    (LATA |= 0x80);
 
   }
 

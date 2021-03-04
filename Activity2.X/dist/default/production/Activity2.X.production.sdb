@@ -37,13 +37,24 @@
 [v _SystemSleep SystemSleep `(v  1 e 1 0 ]
 "35 C:\Users\marce\OneDrive\Documents\GitHub\ENCM369\Activity2.X\main.c
 [v _main main `(v  1 e 1 0 ]
-"76 C:\Users\marce\OneDrive\Documents\GitHub\ENCM369\Activity2.X\user_app.c
+"63 C:\Users\marce\OneDrive\Documents\GitHub\ENCM369\Activity2.X\user_app.c
+[v _TimeXus TimeXus `(v  1 e 1 0 ]
+"104
 [v _UserAppInitialize UserAppInitialize `(v  1 e 1 0 ]
-"95
+"124
 [v _UserAppRun UserAppRun `(v  1 e 1 0 ]
-"37918 C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h
+"22235 C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h
+[v _TMR0L TMR0L `VEuc  1 e 1 @792 ]
+"22373
+[v _TMR0H TMR0H `VEuc  1 e 1 @793 ]
+"22627
+[v _T0CON0 T0CON0 `VEuc  1 e 1 @794 ]
+"22725
+[v _T0CON1 T0CON1 `VEuc  1 e 1 @795 ]
 "37918
 [v _ANSELA ANSELA `VEuc  1 e 1 @1024 ]
+"44870
+[v _PIR3 PIR3 `VEuc  1 e 1 @1201 ]
 "45585
 [v _LATA LATA `VEuc  1 e 1 @1214 ]
 "45840
@@ -61,19 +72,29 @@
 "35 C:\Users\marce\OneDrive\Documents\GitHub\ENCM369\Activity2.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"67
+"69
 } 0
-"95 C:\Users\marce\OneDrive\Documents\GitHub\ENCM369\Activity2.X\user_app.c
+"124 C:\Users\marce\OneDrive\Documents\GitHub\ENCM369\Activity2.X\user_app.c
 [v _UserAppRun UserAppRun `(v  1 e 1 0 ]
 {
-"97
-[v UserAppRun@u32Counter u32Counter `ul  1 a 4 0 ]
-"107
+"126
+[v UserAppRun@u8Pattern u8Pattern `[22]uc  1 s 22 u8Pattern ]
+"127
+[v UserAppRun@u8Counter u8Counter `uc  1 s 1 u8Counter ]
+"128
+[v UserAppRun@u8Speed u8Speed `uc  1 s 1 u8Speed ]
+"149
 } 0
-"76
+"104
 [v _UserAppInitialize UserAppInitialize `(v  1 e 1 0 ]
 {
-"80
+"109
+} 0
+"63
+[v _TimeXus TimeXus `(v  1 e 1 0 ]
+{
+[v TimeXus@u16Period u16Period `us  1 p 2 0 ]
+"79
 } 0
 "132 C:\Users\marce\OneDrive\Documents\GitHub\ENCM369\Activity2.X\encm369_pic18.c
 [v _SystemSleep SystemSleep `(v  1 e 1 0 ]

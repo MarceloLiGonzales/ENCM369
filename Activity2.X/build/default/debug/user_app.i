@@ -27286,7 +27286,12 @@ void SystemSleep(void);
 
 
 # 1 "./user_app.h" 1
-# 27 "./user_app.h"
+# 22 "./user_app.h"
+void TimeXus(u16 u16Period);
+
+
+
+
 void UserAppInitialize(void);
 void UserAppRun(void);
 # 106 "./configuration.h" 2
@@ -27306,18 +27311,46 @@ volatile u8 G_u8UserAppFlags;
 extern volatile u32 G_u32SystemTime1ms;
 extern volatile u32 G_u32SystemTime1s;
 extern volatile u32 G_u32SystemFlags;
-# 76 "user_app.c"
+# 63 "user_app.c"
+ void TimeXus(u16 u16Period)
+ {
+
+
+
+
+     T0CON0 &= 0x7F;
+
+
+     TMR0H = (u8)((0xFFFF - u16Period) >> 8);
+     TMR0L = (u8)(0xFFFF - u16Period);
+
+
+     PIR3 &= 0x7F;
+     T0CON0 |= 0x80;
+
+ }
+# 104 "user_app.c"
 void UserAppInitialize(void)
 {
-
+    T0CON0 = 0x90;
+    T0CON0 = 0x54;
 
 }
-# 95 "user_app.c"
+# 124 "user_app.c"
 void UserAppRun(void)
 {
+    static u8 u8Pattern[22] = {0x00, 0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x21, 0x22, 0x24, 0x28, 0x30, 0x31, 0x32, 0x34, 0x38, 0x39, 0x3A, 0x3C, 0x3D, 0x3E, 0x3F};
+    static u8 u8Counter = 0;
 
-    u32 u32Counter = 4000;
-    PORTA ^= 0x80;
-    for(; u32Counter > 0; u32Counter--);
+    if (u8Counter < 22)
+    {
+        u8Counter++;
+    }
+    else
+    {
+        u8Counter = 0;
+    }
+
+    LATA = (LATA & 0xC0) | u8Pattern[u8Counter];
 
 }
