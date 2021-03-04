@@ -103,7 +103,8 @@ Promises:
 */
 void UserAppInitialize(void)
 {
-    T0CON0 = 0x90;
+    //Initialize Timer0 Module 
+    T0CON0 = 0x90;  
     T0CON1 = 0x54;
 
 } /* end UserAppInitialize() */
@@ -123,17 +124,18 @@ Promises:
 */
 void UserAppRun(void)
 {
+    //set up pattern and speed variables
     static u8 u8Pattern[22] = {0x00, 0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x21, 0x22, 0x24, 0x28, 0x30, 0x31, 0x32, 0x34, 0x38, 0x39, 0x3A, 0x3C, 0x3D, 0x3E, 0x3F};
     static u8 u8Counter = 0;
     static u8 u8Speed = 0;
     
-    if(u8Speed < 1)
+    if(u8Speed < 1) // reduces LED update speed by a factor of 3
     {
-        if (u8Counter < 22)
+        if (u8Counter < 22) //If not the last LED value, increment by 1
         {
             u8Counter++;
         } 
-        else 
+        else //If it is the last LED value in the pattern, restart
         {
             u8Counter = 0;
         }
@@ -144,7 +146,7 @@ void UserAppRun(void)
         u8Speed = 0;
     }
 
-    LATA = (LATA & 0xC0) | u8Pattern[u8Counter];
+    LATA = (LATA & 0xC0) | u8Pattern[u8Counter];  // Update LED values
 
 } /* end UserAppRun */
 
