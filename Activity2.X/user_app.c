@@ -50,6 +50,34 @@ Variable names shall start with "UserApp_<type>" and be declared as static.
 Function Definitions
 **********************************************************************************************************************/
 
+/*--------------------------------------------------------------------
+ void TimeXus(INPUT_PARAMETER_)
+  - Sets Timer0 to count u16Microseconds_
+  - Requires:-Timer0 configured such that each timer tick is 1 microsecond
+  - INPUT_PARAMETER_is the value in microseconds to time from 1 to 65535
+ Promises:
+  - Pre-loads TMR0H:L to clock out desired period
+  - TMR0IF cleared-Timer0 enabled
+ */
+
+ void TimeXus(u16 u16Period)
+ {
+    /* OPTIONAL: range check and handle edge cases */
+     
+     
+    /* Disable the timer during config */
+     T0CON0 &= 0x7F;
+     
+    /* Preload TMR0H and TMR0L based on u16TimeXus */
+     TMR0H = (u8)((0xFFFF - u16Period) >> 8);
+     TMR0L = (u8)(0xFFFF - u16Period);
+     
+    /* Clear TMR0IF and enable Timer 0 */
+     PIR3 &= 0x7F;
+     T0CON0 |= 0x80;
+     
+ } /* end TimeXus () */
+
 /*--------------------------------------------------------------------------------------------------------------------*/
 /*! @publicsection */                                                                                            
 /*--------------------------------------------------------------------------------------------------------------------*/
@@ -75,7 +103,8 @@ Promises:
 */
 void UserAppInitialize(void)
 {
-
+    T0CON0 = 0x90;
+    T0CON1 = 0x54;
 
 } /* end UserAppInitialize() */
 
@@ -94,17 +123,28 @@ Promises:
 */
 void UserAppRun(void)
 {
-    u32 u32Counter = 286400;
-    for(; u32Counter > 0; u32Counter--); //wait 250 ms
+    static u8 u8Pattern[22] = {0x00, 0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x21, 0x22, 0x24, 0x28, 0x30, 0x31, 0x32, 0x34, 0x38, 0x39, 0x3A, 0x3C, 0x3D, 0x3E, 0x3F};
+    static u8 u8Counter = 0;
+    static u8 u8Speed = 0;
     
-    if ((LATA & 0x3F) == 0x3F)  //check that bits 0-5 are on
+    if(u8Speed < 1)
     {
-        LATA = (LATA & 0xC0);  //turn bits 0-5 off
-    } 
-    else 
-    {
-        LATA += 0x01; //add one
+        if (u8Counter < 22)
+        {
+            u8Counter++;
+        } 
+        else 
+        {
+            u8Counter = 0;
+        }
+        u8Speed++;
     }
+    else
+    {
+        u8Speed = 0;
+    }
+
+    LATA = (LATA & 0xC0) | u8Pattern[u8Counter];
 
 } /* end UserAppRun */
 
