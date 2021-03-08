@@ -27332,25 +27332,20 @@ extern volatile u32 G_u32SystemFlags;
 # 104 "user_app.c"
 void UserAppInitialize(void)
 {
+
     T0CON0 = 0x90;
-    T0CON0 = 0x54;
+    T0CON1 = 0x54;
 
 }
-# 124 "user_app.c"
+# 125 "user_app.c"
 void UserAppRun(void)
 {
-    static u8 u8Pattern[22] = {0x00, 0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x21, 0x22, 0x24, 0x28, 0x30, 0x31, 0x32, 0x34, 0x38, 0x39, 0x3A, 0x3C, 0x3D, 0x3E, 0x3F};
-    static u8 u8Counter = 0;
+    static u8 u8Add = 1;
 
-    if (u8Counter < 22)
+    DAC1DATL += u8Add;
+
+    if (DAC1DATL % 255 == 0)
     {
-        u8Counter++;
+        u8Add *= -1;
     }
-    else
-    {
-        u8Counter = 0;
-    }
-
-    LATA = (LATA & 0xC0) | u8Pattern[u8Counter];
-
 }

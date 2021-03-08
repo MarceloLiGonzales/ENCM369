@@ -11,9 +11,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "44870
 [; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 44870: extern volatile unsigned char PIR3 __attribute__((address(0x4B1)));
 [v _PIR3 `Vuc ~T0 @X0 0 e@1201 ]
-"45585
-[; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 45585: extern volatile unsigned char LATA __attribute__((address(0x4BE)));
-[v _LATA `Vuc ~T0 @X0 0 e@1214 ]
+"22725
+[; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 22725: extern volatile unsigned char T0CON1 __attribute__((address(0x31B)));
+[v _T0CON1 `Vuc ~T0 @X0 0 e@795 ]
+"3158
+[; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 3158: extern volatile unsigned char DAC1DATL __attribute__((address(0x07D)));
+[v _DAC1DATL `Vuc ~T0 @X0 0 e@125 ]
 "30 ./configuration.h
 [p x FEXTOSC  =  OFF     ]
 "31
@@ -2578,89 +2581,47 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _UserAppInitialize ]
 [f ]
-"106
-[; ;user_app.c: 106:     T0CON0 = 0x90;
-[e = _T0CON0 -> -> 144 `i `uc ]
 "107
-[; ;user_app.c: 107:     T0CON0 = 0x54;
-[e = _T0CON0 -> -> 84 `i `uc ]
-"109
-[; ;user_app.c: 109: }
+[; ;user_app.c: 107:     T0CON0 = 0x90;
+[e = _T0CON0 -> -> 144 `i `uc ]
+"108
+[; ;user_app.c: 108:     T0CON1 = 0x54;
+[e = _T0CON1 -> -> 84 `i `uc ]
+"110
+[; ;user_app.c: 110: }
 [e :UE 2273 ]
 }
-"124
-[; ;user_app.c: 124: void UserAppRun(void)
-[v _UserAppRun `(v ~T0 @X0 1 ef ]
 "125
-[; ;user_app.c: 125: {
+[; ;user_app.c: 125: void UserAppRun(void)
+[v _UserAppRun `(v ~T0 @X0 1 ef ]
+"126
+[; ;user_app.c: 126: {
 {
 [e :U _UserAppRun ]
 [f ]
-"126
-[; ;user_app.c: 126:     static u8 u8Pattern[22] = {0x00, 0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x21, 0x22, 0x24, 0x28, 0x30, 0x31, 0x32, 0x34, 0x38, 0x39, 0x3A, 0x3C, 0x3D, 0x3E, 0x3F};
-[v F15924 `uc ~T0 @X0 -> 22 `i s u8Pattern ]
-[i F15924
-:U ..
--> -> 0 `i `uc
--> -> 1 `i `uc
--> -> 2 `i `uc
--> -> 4 `i `uc
--> -> 8 `i `uc
--> -> 16 `i `uc
--> -> 32 `i `uc
--> -> 33 `i `uc
--> -> 34 `i `uc
--> -> 36 `i `uc
--> -> 40 `i `uc
--> -> 48 `i `uc
--> -> 49 `i `uc
--> -> 50 `i `uc
--> -> 52 `i `uc
--> -> 56 `i `uc
--> -> 57 `i `uc
--> -> 58 `i `uc
--> -> 60 `i `uc
--> -> 61 `i `uc
--> -> 62 `i `uc
--> -> 63 `i `uc
-..
-]
 "127
-[; ;user_app.c: 127:     static u8 u8Counter = 0;
-[v F15925 `uc ~T0 @X0 1 s u8Counter ]
-[i F15925
--> -> 0 `i `uc
+[; ;user_app.c: 127:     static u8 u8Add = 1;
+[v F15924 `uc ~T0 @X0 1 s u8Add ]
+[i F15924
+-> -> 1 `i `uc
 ]
 "129
-[; ;user_app.c: 129:     if (u8Counter < 22)
-[e $ ! < -> F15925 `i -> 22 `i 2275  ]
-"130
-[; ;user_app.c: 130:     {
-{
+[; ;user_app.c: 129:     DAC1DATL += u8Add;
+[e =+ _DAC1DATL -> F15924 `Vuc ]
 "131
-[; ;user_app.c: 131:         u8Counter++;
-[e ++ F15925 -> -> 1 `i `uc ]
+[; ;user_app.c: 131:     if (DAC1DATL % 255 == 0)
+[e $ ! == % -> _DAC1DATL `i -> 255 `i -> 0 `i 2275  ]
 "132
-[; ;user_app.c: 132:     }
-}
-[e $U 2276  ]
-"133
-[; ;user_app.c: 133:     else
-[e :U 2275 ]
-"134
-[; ;user_app.c: 134:     {
+[; ;user_app.c: 132:     {
 {
-"135
-[; ;user_app.c: 135:         u8Counter = 0;
-[e = F15925 -> -> 0 `i `uc ]
-"136
-[; ;user_app.c: 136:     }
+"133
+[; ;user_app.c: 133:         u8Add *= -1;
+[e =* F15924 -> -U -> 1 `i `uc ]
+"134
+[; ;user_app.c: 134:     }
 }
-[e :U 2276 ]
-"138
-[; ;user_app.c: 138:     LATA = (LATA & 0xC0) | u8Pattern[u8Counter];
-[e = _LATA -> | & -> _LATA `i -> 192 `i -> *U + &U F15924 * -> F15925 `ux -> -> # *U &U F15924 `ui `ux `i `uc ]
-"140
-[; ;user_app.c: 140: }
+[e :U 2275 ]
+"135
+[; ;user_app.c: 135: }
 [e :UE 2274 ]
 }

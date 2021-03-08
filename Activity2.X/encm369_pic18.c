@@ -88,9 +88,13 @@ Promises:
 */
 void GpioSetup(void)
 {
-    PORTA = 0xC0;
+    /*Setup PORTA for all digital output*/
     TRISA = 0x00; 
     ANSELA = 0x00;
+    
+    /*Set DAC1 to use Vdd, Vss, and enable it for RA2*/
+    DAC1CON = 0xA0;
+    DAC1DATL = 0;
   
 } /* end GpioSetup() */
 
