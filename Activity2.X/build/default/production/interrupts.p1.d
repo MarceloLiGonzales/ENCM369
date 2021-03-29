@@ -1,5 +1,5 @@
-build/default/production/user_app.p1:  \
-user_app.c  \
+build/default/production/interrupts.p1:  \
+interrupts.c  \
 configuration.h  \
 typedefs.h  \
 interrupts.h  \
