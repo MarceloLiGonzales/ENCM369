@@ -218,7 +218,7 @@ void UserAppInitialize(void)
     T1CON  = 0x31;  // b'00110001'
     
     // Test call to set frequency
-    InterruptTimerXus(10, 1);
+    //InterruptTimerXus(11, 1);
     
 } /* end UserAppInitialize() */
 
@@ -237,7 +237,51 @@ Promises:
 */
 void UserAppRun(void)
 {
-
+    static u16 au16Note[] = {C4, C4, G4, G4, A4, A4, G4, F4, F4, E4, E4, D4, D4, C4};
+    static u16 au16Length[] = {N4, N4, N4, N4, N4, N4, N2, N4, N4, N4, N4, N4, N4, N2};
+    static u16 u16TimeKeep = 0;
+    static u16 u16TimeLength = 1000;
+    static u16 u16NoteLength = 0;
+    static u8 u8MusicIndex = 0;
+    static u8 u8NoteSwitch = 0; // 0 if note just ended, 1 if pause between note just ended
+    
+    //if(u8MusicIndex < 14)
+    {
+        if(u16TimeKeep == u16TimeLength)
+        {
+            if(u8NoteSwitch)
+            {
+                u16TimeLength = au16Length[u8MusicIndex];
+                u16NoteLength = au16Note[u8MusicIndex] * 2;
+                u8MusicIndex += 1;
+            }
+            else
+            {
+                if(u8MusicIndex < 14)
+                {
+                    u16TimeLength = RT;
+                    u16NoteLength = 32767;
+                }
+                else
+                {
+                    u8MusicIndex = 0;
+                    u16TimeLength = 2000;
+                    u16NoteLength = 32767;
+                }
+            }
+            InterruptTimerXus(u16NoteLength, u8NoteSwitch);
+            u8NoteSwitch = !u8NoteSwitch;
+            u16TimeKeep = 0;
+        }
+        else
+        {
+            u16TimeKeep += 1;
+        }
+    }
+   /* else
+    {
+    u8MusicIndex = 0;
+    }*/
   
 } /* end UserAppRun() */
 

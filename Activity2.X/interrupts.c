@@ -123,8 +123,8 @@ void __interrupt(irq(IRQ_TMR1), high_priority) TMR1_ISR(void)
    KEEP THIS SHORT!
   **********************************************************************/
     
-  DAC1DATL = G_au8UserAppsinTable[u8Index];
-  u8Index += 4;
+  DAC1DATL = G_au8UserAppsinTable[u8Index];  
+  u8Index += 4; // Let u8Index roll over back to 0 as sin table wraps around seamlessly
   
   /*********************************************************************
    End of event handling
