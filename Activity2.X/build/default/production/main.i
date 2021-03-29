@@ -27340,7 +27340,7 @@ void main(void)
 
     (LATA &= 0x7F);
     SystemSleep();
-    TimeXus(10);
+    TimeXus(11);
     while(PIR3bits.TMR0IF == 0) {}
     (LATA |= 0x80);
 

@@ -142,8 +142,8 @@ Promises:
 */
 void UserAppRun(void)
 {
-    static u8Index = 0;
-    DAC1DATL = UserApp_au8sinTable[u8Index % 256];
+    static u8 u8Index = 0;
+    DAC1DATL = UserApp_au8sinTable[u8Index];
     u8Index += 4;
 } /* end UserAppRun */
 

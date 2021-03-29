@@ -60,7 +60,7 @@ void main(void)
     /* System sleep */
     HEARTBEAT_OFF();
     SystemSleep(); 
-    TimeXus(10);
+    TimeXus(11);
     while(PIR3bits.TMR0IF == 0) {}
     HEARTBEAT_ON();
     
