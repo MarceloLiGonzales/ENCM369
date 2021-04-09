@@ -216,17 +216,17 @@
 [v UserAppRun@au16Note au16Note `[14]us  1 s 28 au16Note ]
 "241
 [v UserAppRun@au16Length au16Length `[14]us  1 s 28 au16Length ]
-"242
-[v UserAppRun@u16TimeKeep u16TimeKeep `us  1 s 2 u16TimeKeep ]
 "243
-[v UserAppRun@u16TimeLength u16TimeLength `us  1 s 2 u16TimeLength ]
+[v UserAppRun@u16TimeKeep u16TimeKeep `us  1 s 2 u16TimeKeep ]
 "244
-[v UserAppRun@u16NoteLength u16NoteLength `us  1 s 2 u16NoteLength ]
+[v UserAppRun@u16TimeLength u16TimeLength `us  1 s 2 u16TimeLength ]
 "245
-[v UserAppRun@u8MusicIndex u8MusicIndex `uc  1 s 1 u8MusicIndex ]
+[v UserAppRun@u16NoteLength u16NoteLength `us  1 s 2 u16NoteLength ]
 "246
+[v UserAppRun@u8MusicIndex u8MusicIndex `uc  1 s 1 u8MusicIndex ]
+"247
 [v UserAppRun@u8NoteSwitch u8NoteSwitch `uc  1 s 1 u8NoteSwitch ]
-"286
+"280
 } 0
 "147
 [v _InterruptTimerXus InterruptTimerXus `(v  1 e 1 0 ]

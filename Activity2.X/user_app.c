@@ -218,7 +218,7 @@ void UserAppInitialize(void)
     T1CON  = 0x31;  // b'00110001'
     
     // Test call to set frequency
-    //InterruptTimerXus(11, 1);
+    //InterruptTimerXus(16, 1);
     
 } /* end UserAppInitialize() */
 
@@ -237,52 +237,46 @@ Promises:
 */
 void UserAppRun(void)
 {
-    static u16 au16Note[] = {C4, C4, G4, G4, A4, A4, G4, F4, F4, E4, E4, D4, D4, C4};
+    static u16 au16Note[] = {C4, C4, G4, G4, A4, A4, G4, F4, F4, E4, E4, D4, D4, C4};       //Arrays for melody
     static u16 au16Length[] = {N4, N4, N4, N4, N4, N4, N2, N4, N4, N4, N4, N4, N4, N2};
-    static u16 u16TimeKeep = 0;
-    static u16 u16TimeLength = 1000;
-    static u16 u16NoteLength = 0;
-    static u8 u8MusicIndex = 0;
-    static u8 u8NoteSwitch = 0; // 0 if note just ended, 1 if pause between note just ended
     
-    //if(u8MusicIndex < 14)
+    static u16 u16TimeKeep = 0;         //How long since the note/rest started
+    static u16 u16TimeLength = 1000;    //How long until note/rest has to be update again
+    static u16 u16NoteLength = 0;       //Period in ms of the note's sound wave    
+    static u8 u8MusicIndex = 0;         //what part of the music array are we in
+    static u8 u8NoteSwitch = 0;         // 0 if note just ended, 1 if pause between note just ended
+    
+
+    if(u16TimeKeep == u16TimeLength)    //check if current note/rest has reached the end of its length
     {
-        if(u16TimeKeep == u16TimeLength)
+        if(u8NoteSwitch)                //check if we are going from a rest between notes to a note
         {
-            if(u8NoteSwitch)
+            u16TimeLength = au16Length[u8MusicIndex];       //update length according to length array
+            u16NoteLength = au16Note[u8MusicIndex] * 2;     //load the right sine wave frequency to be played
+            u8MusicIndex += 1;                              //update music index
+        }
+        else                            //if not, it means we just ended a note
+        {
+            if(u8MusicIndex < 14)       //check if we reached the end of the melody
             {
-                u16TimeLength = au16Length[u8MusicIndex];
-                u16NoteLength = au16Note[u8MusicIndex] * 2;
-                u8MusicIndex += 1;
+                u16TimeLength = RT;     //Set timer to not play music for a small time
+                u16NoteLength = 32767;
             }
             else
             {
-                if(u8MusicIndex < 14)
-                {
-                    u16TimeLength = RT;
-                    u16NoteLength = 32767;
-                }
-                else
-                {
-                    u8MusicIndex = 0;
-                    u16TimeLength = 2000;
-                    u16NoteLength = 32767;
-                }
+                u8MusicIndex = 0;       //if we reached the end of the melody, wrap to beginning of music array
+                u16TimeLength = 2000;   //and set a small 2 second rest before starting the melody anew
+                u16NoteLength = 32767;
             }
-            InterruptTimerXus(u16NoteLength, u8NoteSwitch);
-            u8NoteSwitch = !u8NoteSwitch;
-            u16TimeKeep = 0;
         }
-        else
-        {
-            u16TimeKeep += 1;
-        }
+        InterruptTimerXus(u16NoteLength, u8NoteSwitch);     //send note parameters to TMR1 to play the note/rest
+        u8NoteSwitch = !u8NoteSwitch;                       //update note switching var
+        u16TimeKeep = 0;                                    //restart time keeping var
     }
-   /* else
+    else
     {
-    u8MusicIndex = 0;
-    }*/
-  
+        u16TimeKeep += 1; //if we havent reached the end of a note's/rest's length of time, update time keep var 1ms
+    }
 } /* end UserAppRun() */
 
 

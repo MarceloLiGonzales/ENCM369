@@ -3085,139 +3085,133 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> / -> -> -> 2048 `i `us `ui -> -> 2 `i `ui `us
 ..
 ]
-"242
-[; ;user_app.c: 242:     static u16 u16TimeKeep = 0;
+"243
+[; ;user_app.c: 243:     static u16 u16TimeKeep = 0;
 [v F15951 `us ~T0 @X0 1 s u16TimeKeep ]
 [i F15951
 -> -> 0 `i `us
 ]
-"243
-[; ;user_app.c: 243:     static u16 u16TimeLength = 1000;
+"244
+[; ;user_app.c: 244:     static u16 u16TimeLength = 1000;
 [v F15952 `us ~T0 @X0 1 s u16TimeLength ]
 [i F15952
 -> -> 1000 `i `us
 ]
-"244
-[; ;user_app.c: 244:     static u16 u16NoteLength = 0;
+"245
+[; ;user_app.c: 245:     static u16 u16NoteLength = 0;
 [v F15953 `us ~T0 @X0 1 s u16NoteLength ]
 [i F15953
 -> -> 0 `i `us
 ]
-"245
-[; ;user_app.c: 245:     static u8 u8MusicIndex = 0;
+"246
+[; ;user_app.c: 246:     static u8 u8MusicIndex = 0;
 [v F15954 `uc ~T0 @X0 1 s u8MusicIndex ]
 [i F15954
 -> -> 0 `i `uc
 ]
-"246
-[; ;user_app.c: 246:     static u8 u8NoteSwitch = 0;
+"247
+[; ;user_app.c: 247:     static u8 u8NoteSwitch = 0;
 [v F15955 `uc ~T0 @X0 1 s u8NoteSwitch ]
 [i F15955
 -> -> 0 `i `uc
 ]
-"249
-[; ;user_app.c: 249:     {
-{
 "250
-[; ;user_app.c: 250:         if(u16TimeKeep == u16TimeLength)
+[; ;user_app.c: 250:     if(u16TimeKeep == u16TimeLength)
 [e $ ! == -> F15951 `ui -> F15952 `ui 2278  ]
 "251
-[; ;user_app.c: 251:         {
+[; ;user_app.c: 251:     {
 {
 "252
-[; ;user_app.c: 252:             if(u8NoteSwitch)
+[; ;user_app.c: 252:         if(u8NoteSwitch)
 [e $ ! != -> F15955 `i -> 0 `i 2279  ]
 "253
-[; ;user_app.c: 253:             {
+[; ;user_app.c: 253:         {
 {
 "254
-[; ;user_app.c: 254:                 u16TimeLength = au16Length[u8MusicIndex];
+[; ;user_app.c: 254:             u16TimeLength = au16Length[u8MusicIndex];
 [e = F15952 *U + &U F15950 * -> F15954 `ux -> -> # *U &U F15950 `ui `ux ]
 "255
-[; ;user_app.c: 255:                 u16NoteLength = au16Note[u8MusicIndex] * 2;
+[; ;user_app.c: 255:             u16NoteLength = au16Note[u8MusicIndex] * 2;
 [e = F15953 -> * -> *U + &U F15949 * -> F15954 `ux -> -> # *U &U F15949 `ui `ux `ui -> -> 2 `i `ui `us ]
 "256
-[; ;user_app.c: 256:                 u8MusicIndex += 1;
+[; ;user_app.c: 256:             u8MusicIndex += 1;
 [e =+ F15954 -> -> 1 `i `uc ]
 "257
-[; ;user_app.c: 257:             }
+[; ;user_app.c: 257:         }
 }
 [e $U 2280  ]
 "258
-[; ;user_app.c: 258:             else
+[; ;user_app.c: 258:         else
 [e :U 2279 ]
 "259
-[; ;user_app.c: 259:             {
+[; ;user_app.c: 259:         {
 {
 "260
-[; ;user_app.c: 260:                 if(u8MusicIndex < 14)
+[; ;user_app.c: 260:             if(u8MusicIndex < 14)
 [e $ ! < -> F15954 `i -> 14 `i 2281  ]
 "261
-[; ;user_app.c: 261:                 {
+[; ;user_app.c: 261:             {
 {
 "262
-[; ;user_app.c: 262:                     u16TimeLength = (u16)50;
+[; ;user_app.c: 262:                 u16TimeLength = (u16)50;
 [e = F15952 -> -> 50 `i `us ]
 "263
-[; ;user_app.c: 263:                     u16NoteLength = 32767;
+[; ;user_app.c: 263:                 u16NoteLength = 32767;
 [e = F15953 -> -> 32767 `i `us ]
 "264
-[; ;user_app.c: 264:                 }
+[; ;user_app.c: 264:             }
 }
 [e $U 2282  ]
 "265
-[; ;user_app.c: 265:                 else
+[; ;user_app.c: 265:             else
 [e :U 2281 ]
 "266
-[; ;user_app.c: 266:                 {
+[; ;user_app.c: 266:             {
 {
 "267
-[; ;user_app.c: 267:                     u8MusicIndex = 0;
+[; ;user_app.c: 267:                 u8MusicIndex = 0;
 [e = F15954 -> -> 0 `i `uc ]
 "268
-[; ;user_app.c: 268:                     u16TimeLength = 2000;
+[; ;user_app.c: 268:                 u16TimeLength = 2000;
 [e = F15952 -> -> 2000 `i `us ]
 "269
-[; ;user_app.c: 269:                     u16NoteLength = 32767;
+[; ;user_app.c: 269:                 u16NoteLength = 32767;
 [e = F15953 -> -> 32767 `i `us ]
 "270
-[; ;user_app.c: 270:                 }
+[; ;user_app.c: 270:             }
 }
 [e :U 2282 ]
 "271
-[; ;user_app.c: 271:             }
+[; ;user_app.c: 271:         }
 }
 [e :U 2280 ]
 "272
-[; ;user_app.c: 272:             InterruptTimerXus(u16NoteLength, u8NoteSwitch);
+[; ;user_app.c: 272:         InterruptTimerXus(u16NoteLength, u8NoteSwitch);
 [e ( _InterruptTimerXus (2 , F15953 -> F15955 `a ]
 "273
-[; ;user_app.c: 273:             u8NoteSwitch = !u8NoteSwitch;
+[; ;user_app.c: 273:         u8NoteSwitch = !u8NoteSwitch;
 [e = F15955 -> -> ! != -> F15955 `i -> 0 `i `i `uc ]
 "274
-[; ;user_app.c: 274:             u16TimeKeep = 0;
+[; ;user_app.c: 274:         u16TimeKeep = 0;
 [e = F15951 -> -> 0 `i `us ]
 "275
-[; ;user_app.c: 275:         }
+[; ;user_app.c: 275:     }
 }
 [e $U 2283  ]
 "276
-[; ;user_app.c: 276:         else
+[; ;user_app.c: 276:     else
 [e :U 2278 ]
 "277
-[; ;user_app.c: 277:         {
+[; ;user_app.c: 277:     {
 {
 "278
-[; ;user_app.c: 278:             u16TimeKeep += 1;
+[; ;user_app.c: 278:         u16TimeKeep += 1;
 [e =+ F15951 -> -> 1 `i `us ]
 "279
-[; ;user_app.c: 279:         }
+[; ;user_app.c: 279:     }
 }
 [e :U 2283 ]
 "280
-[; ;user_app.c: 280:     }
-}
-"286
-[; ;user_app.c: 286: }
+[; ;user_app.c: 280: }
 [e :UE 2277 ]
 }

@@ -35,7 +35,7 @@ dataBANK6 BANK6 1 600 600 100 1
 dataCOMRAM COMRAM 1 501 501 3A 1
 bssCOMRAM COMRAM 1 53B 53B 17 1
 config CONFIG 4 300000 300000 A 1
-$C:\Users\marce\AppData\Local\Temp\s9ic.o
+$C:\Users\marce\AppData\Local\Temp\s6sg.o
 idloc IDLOC 5 200000 200000 20 1
 init CODE 0 102 102 4 1
 reset_vec CODE 0 0 0 4 1
@@ -211,7 +211,7 @@ $dist/default/production\Activity2.X.production.o
 2E2 text1 CODE >274:C:\Users\marce\OneDrive\Documents\GitHub\ENCM369\Activity2.X\user_app.c
 2EA text1 CODE >275:C:\Users\marce\OneDrive\Documents\GitHub\ENCM369\Activity2.X\user_app.c
 2EE text1 CODE >278:C:\Users\marce\OneDrive\Documents\GitHub\ENCM369\Activity2.X\user_app.c
-2F2 text1 CODE >286:C:\Users\marce\OneDrive\Documents\GitHub\ENCM369\Activity2.X\user_app.c
+2F2 text1 CODE >280:C:\Users\marce\OneDrive\Documents\GitHub\ENCM369\Activity2.X\user_app.c
 456 text0 CODE >34:C:\Users\marce\OneDrive\Documents\GitHub\ENCM369\Activity2.X\main.c
 456 text0 CODE >36:C:\Users\marce\OneDrive\Documents\GitHub\ENCM369\Activity2.X\main.c
 458 text0 CODE >39:C:\Users\marce\OneDrive\Documents\GitHub\ENCM369\Activity2.X\main.c
@@ -224,55 +224,55 @@ $dist/default/production\Activity2.X.production.o
 472 text0 CODE >62:C:\Users\marce\OneDrive\Documents\GitHub\ENCM369\Activity2.X\main.c
 474 text0 CODE >63:C:\Users\marce\OneDrive\Documents\GitHub\ENCM369\Activity2.X\main.c
 478 text0 CODE >64:C:\Users\marce\OneDrive\Documents\GitHub\ENCM369\Activity2.X\main.c
-2F4 cinit CODE >7085:C:\Users\marce\AppData\Local\Temp\s9ic.s
-2F4 cinit CODE >7087:C:\Users\marce\AppData\Local\Temp\s9ic.s
-2F4 cinit CODE >7090:C:\Users\marce\AppData\Local\Temp\s9ic.s
-2F4 cinit CODE >7155:C:\Users\marce\AppData\Local\Temp\s9ic.s
-2F6 cinit CODE >7156:C:\Users\marce\AppData\Local\Temp\s9ic.s
-2F8 cinit CODE >7157:C:\Users\marce\AppData\Local\Temp\s9ic.s
-2FA cinit CODE >7158:C:\Users\marce\AppData\Local\Temp\s9ic.s
-2FC cinit CODE >7159:C:\Users\marce\AppData\Local\Temp\s9ic.s
-2FE cinit CODE >7160:C:\Users\marce\AppData\Local\Temp\s9ic.s
-300 cinit CODE >7161:C:\Users\marce\AppData\Local\Temp\s9ic.s
-304 cinit CODE >7162:C:\Users\marce\AppData\Local\Temp\s9ic.s
-308 cinit CODE >7163:C:\Users\marce\AppData\Local\Temp\s9ic.s
-308 cinit CODE >7164:C:\Users\marce\AppData\Local\Temp\s9ic.s
-30A cinit CODE >7165:C:\Users\marce\AppData\Local\Temp\s9ic.s
-30E cinit CODE >7166:C:\Users\marce\AppData\Local\Temp\s9ic.s
-310 cinit CODE >7167:C:\Users\marce\AppData\Local\Temp\s9ic.s
-312 cinit CODE >7168:C:\Users\marce\AppData\Local\Temp\s9ic.s
-314 cinit CODE >7169:C:\Users\marce\AppData\Local\Temp\s9ic.s
-316 cinit CODE >7170:C:\Users\marce\AppData\Local\Temp\s9ic.s
-318 cinit CODE >7174:C:\Users\marce\AppData\Local\Temp\s9ic.s
-31A cinit CODE >7175:C:\Users\marce\AppData\Local\Temp\s9ic.s
-31C cinit CODE >7176:C:\Users\marce\AppData\Local\Temp\s9ic.s
-31E cinit CODE >7177:C:\Users\marce\AppData\Local\Temp\s9ic.s
-320 cinit CODE >7178:C:\Users\marce\AppData\Local\Temp\s9ic.s
-322 cinit CODE >7179:C:\Users\marce\AppData\Local\Temp\s9ic.s
-324 cinit CODE >7180:C:\Users\marce\AppData\Local\Temp\s9ic.s
-328 cinit CODE >7181:C:\Users\marce\AppData\Local\Temp\s9ic.s
-32C cinit CODE >7182:C:\Users\marce\AppData\Local\Temp\s9ic.s
-32C cinit CODE >7183:C:\Users\marce\AppData\Local\Temp\s9ic.s
-32E cinit CODE >7184:C:\Users\marce\AppData\Local\Temp\s9ic.s
-332 cinit CODE >7185:C:\Users\marce\AppData\Local\Temp\s9ic.s
-334 cinit CODE >7186:C:\Users\marce\AppData\Local\Temp\s9ic.s
-336 cinit CODE >7187:C:\Users\marce\AppData\Local\Temp\s9ic.s
-338 cinit CODE >7191:C:\Users\marce\AppData\Local\Temp\s9ic.s
-33C cinit CODE >7192:C:\Users\marce\AppData\Local\Temp\s9ic.s
-33E cinit CODE >7193:C:\Users\marce\AppData\Local\Temp\s9ic.s
-33E cinit CODE >7194:C:\Users\marce\AppData\Local\Temp\s9ic.s
-340 cinit CODE >7195:C:\Users\marce\AppData\Local\Temp\s9ic.s
-342 cinit CODE >7196:C:\Users\marce\AppData\Local\Temp\s9ic.s
-344 cinit CODE >7204:C:\Users\marce\AppData\Local\Temp\s9ic.s
-346 cinit CODE >7205:C:\Users\marce\AppData\Local\Temp\s9ic.s
-348 cinit CODE >7206:C:\Users\marce\AppData\Local\Temp\s9ic.s
-34A cinit CODE >7207:C:\Users\marce\AppData\Local\Temp\s9ic.s
-34C cinit CODE >7208:C:\Users\marce\AppData\Local\Temp\s9ic.s
-34E cinit CODE >7209:C:\Users\marce\AppData\Local\Temp\s9ic.s
-350 cinit CODE >7210:C:\Users\marce\AppData\Local\Temp\s9ic.s
-352 cinit CODE >7216:C:\Users\marce\AppData\Local\Temp\s9ic.s
-352 cinit CODE >7218:C:\Users\marce\AppData\Local\Temp\s9ic.s
-354 cinit CODE >7219:C:\Users\marce\AppData\Local\Temp\s9ic.s
+2F4 cinit CODE >7085:C:\Users\marce\AppData\Local\Temp\s6sg.s
+2F4 cinit CODE >7087:C:\Users\marce\AppData\Local\Temp\s6sg.s
+2F4 cinit CODE >7090:C:\Users\marce\AppData\Local\Temp\s6sg.s
+2F4 cinit CODE >7155:C:\Users\marce\AppData\Local\Temp\s6sg.s
+2F6 cinit CODE >7156:C:\Users\marce\AppData\Local\Temp\s6sg.s
+2F8 cinit CODE >7157:C:\Users\marce\AppData\Local\Temp\s6sg.s
+2FA cinit CODE >7158:C:\Users\marce\AppData\Local\Temp\s6sg.s
+2FC cinit CODE >7159:C:\Users\marce\AppData\Local\Temp\s6sg.s
+2FE cinit CODE >7160:C:\Users\marce\AppData\Local\Temp\s6sg.s
+300 cinit CODE >7161:C:\Users\marce\AppData\Local\Temp\s6sg.s
+304 cinit CODE >7162:C:\Users\marce\AppData\Local\Temp\s6sg.s
+308 cinit CODE >7163:C:\Users\marce\AppData\Local\Temp\s6sg.s
+308 cinit CODE >7164:C:\Users\marce\AppData\Local\Temp\s6sg.s
+30A cinit CODE >7165:C:\Users\marce\AppData\Local\Temp\s6sg.s
+30E cinit CODE >7166:C:\Users\marce\AppData\Local\Temp\s6sg.s
+310 cinit CODE >7167:C:\Users\marce\AppData\Local\Temp\s6sg.s
+312 cinit CODE >7168:C:\Users\marce\AppData\Local\Temp\s6sg.s
+314 cinit CODE >7169:C:\Users\marce\AppData\Local\Temp\s6sg.s
+316 cinit CODE >7170:C:\Users\marce\AppData\Local\Temp\s6sg.s
+318 cinit CODE >7174:C:\Users\marce\AppData\Local\Temp\s6sg.s
+31A cinit CODE >7175:C:\Users\marce\AppData\Local\Temp\s6sg.s
+31C cinit CODE >7176:C:\Users\marce\AppData\Local\Temp\s6sg.s
+31E cinit CODE >7177:C:\Users\marce\AppData\Local\Temp\s6sg.s
+320 cinit CODE >7178:C:\Users\marce\AppData\Local\Temp\s6sg.s
+322 cinit CODE >7179:C:\Users\marce\AppData\Local\Temp\s6sg.s
+324 cinit CODE >7180:C:\Users\marce\AppData\Local\Temp\s6sg.s
+328 cinit CODE >7181:C:\Users\marce\AppData\Local\Temp\s6sg.s
+32C cinit CODE >7182:C:\Users\marce\AppData\Local\Temp\s6sg.s
+32C cinit CODE >7183:C:\Users\marce\AppData\Local\Temp\s6sg.s
+32E cinit CODE >7184:C:\Users\marce\AppData\Local\Temp\s6sg.s
+332 cinit CODE >7185:C:\Users\marce\AppData\Local\Temp\s6sg.s
+334 cinit CODE >7186:C:\Users\marce\AppData\Local\Temp\s6sg.s
+336 cinit CODE >7187:C:\Users\marce\AppData\Local\Temp\s6sg.s
+338 cinit CODE >7191:C:\Users\marce\AppData\Local\Temp\s6sg.s
+33C cinit CODE >7192:C:\Users\marce\AppData\Local\Temp\s6sg.s
+33E cinit CODE >7193:C:\Users\marce\AppData\Local\Temp\s6sg.s
+33E cinit CODE >7194:C:\Users\marce\AppData\Local\Temp\s6sg.s
+340 cinit CODE >7195:C:\Users\marce\AppData\Local\Temp\s6sg.s
+342 cinit CODE >7196:C:\Users\marce\AppData\Local\Temp\s6sg.s
+344 cinit CODE >7204:C:\Users\marce\AppData\Local\Temp\s6sg.s
+346 cinit CODE >7205:C:\Users\marce\AppData\Local\Temp\s6sg.s
+348 cinit CODE >7206:C:\Users\marce\AppData\Local\Temp\s6sg.s
+34A cinit CODE >7207:C:\Users\marce\AppData\Local\Temp\s6sg.s
+34C cinit CODE >7208:C:\Users\marce\AppData\Local\Temp\s6sg.s
+34E cinit CODE >7209:C:\Users\marce\AppData\Local\Temp\s6sg.s
+350 cinit CODE >7210:C:\Users\marce\AppData\Local\Temp\s6sg.s
+352 cinit CODE >7216:C:\Users\marce\AppData\Local\Temp\s6sg.s
+352 cinit CODE >7218:C:\Users\marce\AppData\Local\Temp\s6sg.s
+354 cinit CODE >7219:C:\Users\marce\AppData\Local\Temp\s6sg.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -294,15 +294,15 @@ __Hspace_2 0 0 ABS 0 - dist/default/production\Activity2.X.production.o
 __Hspace_4 60000A 0 ABS 0 - dist/default/production\Activity2.X.production.o
 __HidataBANK6 0 0 ABS 0 idataBANK6 dist/default/production\Activity2.X.production.o
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production\Activity2.X.production.o
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\marce\AppData\Local\Temp\s9ic.o
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\marce\AppData\Local\Temp\s6sg.o
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\Activity2.X.production.o
 _T1CONbits 31E 0 ABS 0 - dist/default/production\Activity2.X.production.o
 __Lsmallconst 0 0 SMALLCONST 0 smallconst dist/default/production\Activity2.X.production.o
 _LATA 4BE 0 ABS 0 - dist/default/production\Activity2.X.production.o
 _T2PR 323 0 ABS 0 - dist/default/production\Activity2.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\marce\AppData\Local\Temp\s9ic.o
+___sp 0 0 STACK 2 stack C:\Users\marce\AppData\Local\Temp\s6sg.o
 _main 456 0 CODE 0 text0 dist/default/production\Activity2.X.production.o
-start 102 0 CODE 0 init C:\Users\marce\AppData\Local\Temp\s9ic.o
+start 102 0 CODE 0 init C:\Users\marce\AppData\Local\Temp\s6sg.o
 __size_of_main 0 0 ABS 0 - dist/default/production\Activity2.X.production.o
 __HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\Activity2.X.production.o
 _DAC1DATL 7D 0 ABS 0 - dist/default/production\Activity2.X.production.o
@@ -312,11 +312,11 @@ __Hpowerup 0 0 CODE 0 powerup dist/default/production\Activity2.X.production.o
 __end_of_SW_ISR 504 0 CODE 0 text10 dist/default/production\Activity2.X.production.o
 __HdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production\Activity2.X.production.o
 InterruptTimerXus@u16TimeXus_ 553 0 COMRAM 1 cstackCOMRAM dist/default/production\Activity2.X.production.o
-__accesstop 560 0 ABS 0 - C:\Users\marce\AppData\Local\Temp\s9ic.o
-intlevel0 0 0 CODE 0 text C:\Users\marce\AppData\Local\Temp\s9ic.o
-intlevel1 0 0 CODE 0 text C:\Users\marce\AppData\Local\Temp\s9ic.o
-intlevel2 0 0 CODE 0 text C:\Users\marce\AppData\Local\Temp\s9ic.o
-intlevel3 0 0 CODE 0 text C:\Users\marce\AppData\Local\Temp\s9ic.o
+__accesstop 560 0 ABS 0 - C:\Users\marce\AppData\Local\Temp\s6sg.o
+intlevel0 0 0 CODE 0 text C:\Users\marce\AppData\Local\Temp\s6sg.o
+intlevel1 0 0 CODE 0 text C:\Users\marce\AppData\Local\Temp\s6sg.o
+intlevel2 0 0 CODE 0 text C:\Users\marce\AppData\Local\Temp\s6sg.o
+intlevel3 0 0 CODE 0 text C:\Users\marce\AppData\Local\Temp\s6sg.o
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\Activity2.X.production.o
 _DEFAULT_ISR 4A0 0 CODE 0 text9 dist/default/production\Activity2.X.production.o
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\Activity2.X.production.o
@@ -327,8 +327,8 @@ ivt0x8_base 8 0 CODE 0 ivt0x8 dist/default/production\Activity2.X.production.o
 _UserAppRun 206 0 CODE 0 text1 dist/default/production\Activity2.X.production.o
 _ANSELA 400 0 ABS 0 - dist/default/production\Activity2.X.production.o
 _G_u32SystemTime1s 53F 0 COMRAM 1 bssCOMRAM dist/default/production\Activity2.X.production.o
-___inthi_sp 0 0 STACK 2 stack C:\Users\marce\AppData\Local\Temp\s9ic.o
-___intlo_sp 0 0 STACK 2 stack C:\Users\marce\AppData\Local\Temp\s9ic.o
+___inthi_sp 0 0 STACK 2 stack C:\Users\marce\AppData\Local\Temp\s6sg.o
+___intlo_sp 0 0 STACK 2 stack C:\Users\marce\AppData\Local\Temp\s6sg.o
 __LdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production\Activity2.X.production.o
 _DAC1CON 7F 0 ABS 0 - dist/default/production\Activity2.X.production.o
 __Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\Activity2.X.production.o
@@ -402,7 +402,7 @@ __Hbank36 0 0 ABS 0 bank36 dist/default/production\Activity2.X.production.o
 __Hbank37 0 0 ABS 0 bank37 dist/default/production\Activity2.X.production.o
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\Activity2.X.production.o
 __Hbigram 0 0 ABS 0 bigram dist/default/production\Activity2.X.production.o
-__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\marce\AppData\Local\Temp\s9ic.o
+__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\marce\AppData\Local\Temp\s6sg.o
 _SystemSleep 4D0 0 CODE 0 text4 dist/default/production\Activity2.X.production.o
 UserAppRun@au16Length 501 0 COMRAM 1 dataCOMRAM dist/default/production\Activity2.X.production.o
 __Hcomram 0 0 ABS 0 comram dist/default/production\Activity2.X.production.o
@@ -526,8 +526,8 @@ __end_of_SysTickSetup 456 0 CODE 0 text5 dist/default/production\Activity2.X.pro
 _UserAppInitialize 482 0 CODE 0 text3 dist/default/production\Activity2.X.production.o
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/production\Activity2.X.production.o
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production\Activity2.X.production.o
-stackhi 25FF 0 ABS 0 - C:\Users\marce\AppData\Local\Temp\s9ic.o
-stacklo 700 0 ABS 0 - C:\Users\marce\AppData\Local\Temp\s9ic.o
+stackhi 25FF 0 ABS 0 - C:\Users\marce\AppData\Local\Temp\s6sg.o
+stacklo 700 0 ABS 0 - C:\Users\marce\AppData\Local\Temp\s6sg.o
 __Lirdata 0 0 CODE 0 irdata dist/default/production\Activity2.X.production.o
 __Livt0x8 8 0 CODE 0 ivt0x8 dist/default/production\Activity2.X.production.o
 __Lspace_0 0 0 ABS 0 - dist/default/production\Activity2.X.production.o
@@ -563,7 +563,7 @@ _G_u8UserAppTimePeriodLo 54E 0 COMRAM 1 bssCOMRAM dist/default/production\Activi
 __Ltext10 0 0 ABS 0 text10 dist/default/production\Activity2.X.production.o
 __Ltext11 0 0 ABS 0 text11 dist/default/production\Activity2.X.production.o
 __Ltext12 0 0 ABS 0 text12 dist/default/production\Activity2.X.production.o
-__ramtop 2600 0 RAM 0 ramtop C:\Users\marce\AppData\Local\Temp\s9ic.o
+__ramtop 2600 0 RAM 0 ramtop C:\Users\marce\AppData\Local\Temp\s6sg.o
 __Lpowerup 0 0 CODE 0 powerup dist/default/production\Activity2.X.production.o
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\Activity2.X.production.o
 DEFAULT_ISR@u32UnhandledCounter 53B 0 COMRAM 1 bssCOMRAM dist/default/production\Activity2.X.production.o

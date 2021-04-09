@@ -27472,6 +27472,7 @@ void UserAppRun(void)
 {
     static u16 au16Note[] = {(u16)(u16)60, (u16)(u16)60, (u16)(u16)40, (u16)(u16)40, (u16)(u16)36, (u16)(u16)36, (u16)(u16)40, (u16)(u16)45, (u16)(u16)45, (u16)(u16)47, (u16)(u16)47, (u16)(u16)53, (u16)(u16)53, (u16)(u16)60};
     static u16 au16Length[] = {(u16)((u16)2048 / 4), (u16)((u16)2048 / 4), (u16)((u16)2048 / 4), (u16)((u16)2048 / 4), (u16)((u16)2048 / 4), (u16)((u16)2048 / 4), (u16)((u16)2048 / 2), (u16)((u16)2048 / 4), (u16)((u16)2048 / 4), (u16)((u16)2048 / 4), (u16)((u16)2048 / 4), (u16)((u16)2048 / 4), (u16)((u16)2048 / 4), (u16)((u16)2048 / 2)};
+
     static u16 u16TimeKeep = 0;
     static u16 u16TimeLength = 1000;
     static u16 u16NoteLength = 0;
@@ -27479,41 +27480,34 @@ void UserAppRun(void)
     static u8 u8NoteSwitch = 0;
 
 
+    if(u16TimeKeep == u16TimeLength)
     {
-        if(u16TimeKeep == u16TimeLength)
+        if(u8NoteSwitch)
         {
-            if(u8NoteSwitch)
-            {
-                u16TimeLength = au16Length[u8MusicIndex];
-                u16NoteLength = au16Note[u8MusicIndex] * 2;
-                u8MusicIndex += 1;
-            }
-            else
-            {
-                if(u8MusicIndex < 14)
-                {
-                    u16TimeLength = (u16)50;
-                    u16NoteLength = 32767;
-                }
-                else
-                {
-                    u8MusicIndex = 0;
-                    u16TimeLength = 2000;
-                    u16NoteLength = 32767;
-                }
-            }
-            InterruptTimerXus(u16NoteLength, u8NoteSwitch);
-            u8NoteSwitch = !u8NoteSwitch;
-            u16TimeKeep = 0;
+            u16TimeLength = au16Length[u8MusicIndex];
+            u16NoteLength = au16Note[u8MusicIndex] * 2;
+            u8MusicIndex += 1;
         }
         else
         {
-            u16TimeKeep += 1;
+            if(u8MusicIndex < 14)
+            {
+                u16TimeLength = (u16)50;
+                u16NoteLength = 32767;
+            }
+            else
+            {
+                u8MusicIndex = 0;
+                u16TimeLength = 2000;
+                u16NoteLength = 32767;
+            }
         }
+        InterruptTimerXus(u16NoteLength, u8NoteSwitch);
+        u8NoteSwitch = !u8NoteSwitch;
+        u16TimeKeep = 0;
     }
-
-
-
-
-
+    else
+    {
+        u16TimeKeep += 1;
+    }
 }

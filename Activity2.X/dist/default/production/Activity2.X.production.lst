@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.31 build 20201012212115 
-                                                                                               Mon Mar 29 14:52:02 2021
+                                                                                               Fri Apr 09 12:36:36 2021
 
 Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1 
      1                           	processor	18F27Q43
@@ -718,7 +718,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    678  00021A  EF77  F001         	goto	l1077
    679  00021E                     u150:
    680  00021E                     
-   681                           ;user_app.c: 251:         {;user_app.c: 252:             if(u8NoteSwitch)
+   681                           ;user_app.c: 251:     {;user_app.c: 252:         if(u8NoteSwitch)
    682  00021E  504C               	movf	UserAppRun@u8NoteSwitch^(0+1280),w,c
    683  000220  B4D8               	btfsc	status,2,c
    684  000222  EF15  F001         	goto	u161
@@ -727,8 +727,8 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    687  00022A  EF3B  F001         	goto	l1065
    688  00022E                     u160:
    689  00022E                     
-   690                           ;user_app.c: 253:             {;user_app.c: 254:                 u16TimeLength = au16Len
-      +                          gth[u8MusicIndex];
+   690                           ;user_app.c: 253:         {;user_app.c: 254:             u16TimeLength = au16Length[u8Mu
+      +                          sicIndex];
    691  00022E  504D               	movf	UserAppRun@u8MusicIndex^(0+1280),w,c
    692  000230  0D02               	mullw	2
    693  000232  0E01               	movlw	low UserAppRun@au16Length
@@ -740,7 +740,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    699  00023E  0061 F378  F539    	movff	postinc2,UserAppRun@u16TimeLength
    700  000244  0061 F374  F53A    	movff	postdec2,UserAppRun@u16TimeLength+1
    701                           
-   702                           ;user_app.c: 255:                 u16NoteLength = au16Note[u8MusicIndex] * 2;
+   702                           ;user_app.c: 255:             u16NoteLength = au16Note[u8MusicIndex] * 2;
    703  00024A  504D               	movf	UserAppRun@u8MusicIndex^(0+1280),w,c
    704  00024C  0D02               	mullw	2
    705  00024E  0E1D               	movlw	low UserAppRun@au16Note
@@ -757,14 +757,14 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    716  00026C  3459               	rlcf	(??_UserAppRun+1)^(0+1280),w,c
    717  00026E  6E48               	movwf	(UserAppRun@u16NoteLength+1)^(0+1280),c
    718  000270                     
-   719                           ;user_app.c: 256:                 u8MusicIndex += 1;
+   719                           ;user_app.c: 256:             u8MusicIndex += 1;
    720  000270  2A4D               	incf	UserAppRun@u8MusicIndex^(0+1280),f,c
    721                           
-   722                           ;user_app.c: 257:             }
+   722                           ;user_app.c: 257:         }
    723  000272  EF55  F001         	goto	l1071
    724  000276                     l1065:
    725                           
-   726                           ;user_app.c: 259:             {;user_app.c: 260:                 if(u8MusicIndex < 14)
+   726                           ;user_app.c: 259:         {;user_app.c: 260:             if(u8MusicIndex < 14)
    727  000276  0E0E               	movlw	14
    728  000278  604D               	cpfslt	UserAppRun@u8MusicIndex^(0+1280),c
    729  00027A  EF41  F001         	goto	u171
@@ -773,40 +773,39 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    732  000282  EF4C  F001         	goto	l1069
    733  000286                     u170:
    734  000286                     
-   735                           ;user_app.c: 261:                 {;user_app.c: 262:                     u16TimeLength =
-      +                           (u16)50;
+   735                           ;user_app.c: 261:             {;user_app.c: 262:                 u16TimeLength = (u16)50
+      +                          ;
    736  000286  0E00               	movlw	0
    737  000288  6E3A               	movwf	(UserAppRun@u16TimeLength+1)^(0+1280),c
    738  00028A  0E32               	movlw	50
    739  00028C  6E39               	movwf	UserAppRun@u16TimeLength^(0+1280),c
    740                           
-   741                           ;user_app.c: 263:                     u16NoteLength = 32767;
+   741                           ;user_app.c: 263:                 u16NoteLength = 32767;
    742  00028E  0E7F               	movlw	127
    743  000290  6E48               	movwf	(UserAppRun@u16NoteLength+1)^(0+1280),c
    744  000292  6847               	setf	UserAppRun@u16NoteLength^(0+1280),c
    745                           
-   746                           ;user_app.c: 264:                 }
+   746                           ;user_app.c: 264:             }
    747  000294  EF55  F001         	goto	l1071
    748  000298                     l1069:
    749                           
-   750                           ;user_app.c: 266:                 {;user_app.c: 267:                     u8MusicIndex = 
-      +                          0;
+   750                           ;user_app.c: 266:             {;user_app.c: 267:                 u8MusicIndex = 0;
    751  000298  0E00               	movlw	0
    752  00029A  6E4D               	movwf	UserAppRun@u8MusicIndex^(0+1280),c
    753                           
-   754                           ;user_app.c: 268:                     u16TimeLength = 2000;
+   754                           ;user_app.c: 268:                 u16TimeLength = 2000;
    755  00029C  0E07               	movlw	7
    756  00029E  6E3A               	movwf	(UserAppRun@u16TimeLength+1)^(0+1280),c
    757  0002A0  0ED0               	movlw	208
    758  0002A2  6E39               	movwf	UserAppRun@u16TimeLength^(0+1280),c
    759                           
-   760                           ;user_app.c: 269:                     u16NoteLength = 32767;
+   760                           ;user_app.c: 269:                 u16NoteLength = 32767;
    761  0002A4  0E7F               	movlw	127
    762  0002A6  6E48               	movwf	(UserAppRun@u16NoteLength+1)^(0+1280),c
    763  0002A8  6847               	setf	UserAppRun@u16NoteLength^(0+1280),c
    764  0002AA                     l1071:
    765                           
-   766                           ;user_app.c: 272:             InterruptTimerXus(u16NoteLength, u8NoteSwitch);
+   766                           ;user_app.c: 272:         InterruptTimerXus(u16NoteLength, u8NoteSwitch);
    767  0002AA  C547  F553         	movff	UserAppRun@u16NoteLength,InterruptTimerXus@u16TimeXus_
    768  0002AE  C548  F554         	movff	UserAppRun@u16NoteLength+1,InterruptTimerXus@u16TimeXus_+1
    769  0002B2  504C               	movf	UserAppRun@u8NoteSwitch^(0+1280),w,c
@@ -822,7 +821,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    779  0002C6  6E55               	movwf	InterruptTimerXus@bContinuous_^(0+1280),c
    780  0002C8  ECAC  F001         	call	_InterruptTimerXus	;wreg free
    781  0002CC                     
-   782                           ;user_app.c: 273:             u8NoteSwitch = !u8NoteSwitch;
+   782                           ;user_app.c: 273:         u8NoteSwitch = !u8NoteSwitch;
    783  0002CC  504C               	movf	UserAppRun@u8NoteSwitch^(0+1280),w,c
    784  0002CE  B4D8               	btfsc	status,2,c
    785  0002D0  EF6C  F001         	goto	u201
@@ -835,17 +834,17 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    792  0002E0                     u210:
    793  0002E0  6E4C               	movwf	UserAppRun@u8NoteSwitch^(0+1280),c
    794  0002E2                     
-   795                           ;user_app.c: 274:             u16TimeKeep = 0;
+   795                           ;user_app.c: 274:         u16TimeKeep = 0;
    796  0002E2  0E00               	movlw	0
    797  0002E4  6E4A               	movwf	(UserAppRun@u16TimeKeep+1)^(0+1280),c
    798  0002E6  0E00               	movlw	0
    799  0002E8  6E49               	movwf	UserAppRun@u16TimeKeep^(0+1280),c
    800                           
-   801                           ;user_app.c: 275:         }
+   801                           ;user_app.c: 275:     }
    802  0002EA  EF79  F001         	goto	l139
    803  0002EE                     l1077:
    804                           
-   805                           ;user_app.c: 277:         {;user_app.c: 278:             u16TimeKeep += 1;
+   805                           ;user_app.c: 277:     {;user_app.c: 278:         u16TimeKeep += 1;
    806  0002EE  4A49               	infsnz	UserAppRun@u16TimeKeep^(0+1280),f,c
    807  0002F0  2A4A               	incf	(UserAppRun@u16TimeKeep+1)^(0+1280),f,c
    808  0002F2                     l139:
@@ -3176,7 +3175,7 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.31 build 20201012212115 
-Symbol Table                                                                                   Mon Mar 29 14:52:02 2021
+Symbol Table                                                                                   Fri Apr 09 12:36:36 2021
 
               ??_InterruptSetup 0553           __size_of_SysTickSetup 0034               _InterruptTimerXus 0358  
                             l30 04CE                              l33 0454                              l27 0504  
