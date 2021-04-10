@@ -252,12 +252,12 @@ void UserAppRun(void)
         if(u8NoteSwitch)                //check if we are going from a rest between notes to a note
         {
             u16TimeLength = au16Length[u8MusicIndex];       //update length according to length array
-            u16NoteLength = au16Note[u8MusicIndex] * 2;     //load the right sine wave frequency to be played
+            u16NoteLength = au16Note[u8MusicIndex] * 2;     //load the right sine wave frequency to be played (x2 to counter act 1.7 wrong frequency in InterruptTimerXus)
             u8MusicIndex += 1;                              //update music index
         }
         else                            //if not, it means we just ended a note
         {
-            if(u8MusicIndex < 14)       //check if we reached the end of the melody
+            if(u8MusicIndex < 14)       //check that we have not reached the end of the melody
             {
                 u16TimeLength = RT;     //Set timer to not play music for a small time
                 u16NoteLength = 32767;
